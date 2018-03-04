@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text="New Profile Entry" id="pb1">
+    <f:facet name="toolbar"/>
+    <af:panelGridLayout id="pgl1">
+      <af:gridRow marginTop="0px" height="auto" id="gr1">
+        <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc1" valign="stretch" halign="stretch">
+          <af:panelFormLayout id="pfl1" labelWidth="150" fieldWidth="200">
+            <af:inputText label="First Name" id="it1" value="#{backingBeanScope.NewPaymentProfileBean.billToFirstName}"/>
+            <af:inputText label="Last Name" id="it2" value="#{backingBeanScope.NewPaymentProfileBean.billToLastName}"/>
+            <af:inputText label="Company Name" id="it3"/>
+            <af:inputText label="Street" id="it4" value="#{backingBeanScope.NewPaymentProfileBean.billToStreet1}"/>
+            <af:inputText label="City / Town" id="it5" value="#{backingBeanScope.NewPaymentProfileBean.billToCity}"/>
+            <af:inputListOfValues label="State" popupTitle="Search and Result Dialog" id="ilov1" columns="4"
+                                  value="#{backingBeanScope.NewPaymentProfileBean.billToState}"/>
+            <af:inputText label="Zip Code" id="it6" columns="5" value="#{backingBeanScope.NewPaymentProfileBean.billToPostalCode}"/>
+            <af:inputComboboxListOfValues label="Card / Account Type" popupTitle="Search and Result Dialog" id="iclov1"
+                                          columns="5" value="#{backingBeanScope.NewPaymentProfileBean.cardCardType}"/>
+            <af:inputText label="Card / Account Number" id="it7" value="#{backingBeanScope.NewPaymentProfileBean.cardAccountNumber}"/>
+            <af:inputListOfValues label="Expiration Month" popupTitle="Search and Result Dialog" id="ilov2"
+                                  columns="2" value="#{backingBeanScope.NewPaymentProfileBean.cardExpirationMonth}">
+              <f:facet name="resultsTable"/>
+            </af:inputListOfValues>
+            <af:inputListOfValues label="Expiration Year" popupTitle="Search and Result Dialog" id="ilov3" columns="4"
+                                  value="#{backingBeanScope.NewPaymentProfileBean.cardExpirationYear}"/>
+            <f:facet name="footer"/>
+          </af:panelFormLayout>
+        </af:gridCell>
+      </af:gridRow>
+      <af:gridRow marginTop="0px" height="1px" marginBottom="0px" id="gr2">
+        <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc2"/>
+      </af:gridRow>
+    </af:panelGridLayout>
+    <af:button text="Submit" id="b2" action="proceedWithEntry"/>
+    <af:button text="Back" id="b1" action="backToPaymentProfileNew"/>
+    <af:outputText value="#{backingBeanScope.NewPaymentProfileBean.customerId}" id="ot2" inlineStyle="color:White;"/>
+    <af:outputText value="#{bindings.CustomerId.inputValue}" shortDesc="#{bindings.CustomerId.hints.tooltip}" id="ot1"
+                   inlineStyle="color:White;"/>
+  </af:panelBox>
+</ui:composition>

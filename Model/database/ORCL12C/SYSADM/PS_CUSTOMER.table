@@ -1,0 +1,5071 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<table xmlns="http://xmlns.oracle.com/jdeveloper/1211/offlinedb">
+  <name>PS_CUSTOMER</name>
+  <columns>
+    <column>
+      <name>SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_STATUS</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_STATUS_DT</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_STATUS_DT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>STCUST_DAYS</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>STCUST_DAYS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>EXPIRATION_DATE</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EXPIRATION_DATE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>EXP_PENDING</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EXP_PENDING</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>TEMPLATE_ADDR</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TEMPLATE_ADDR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUSTOMER_TYPE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SINCE_DT</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SINCE_DT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ADD_DT</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADD_DT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAME1</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME1</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAMESHORT</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAMESHORT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAME2</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME2</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAME3</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME3</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAME1_AC</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME1_AC</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAME2_AC</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME2_AC</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>NAME3_AC</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>NAME3_AC</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ADDRESS_SEQ_NUM</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADDRESS_SEQ_NUM</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CORPORATE_SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CORPORATE_SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CORPORATE_CUST_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CORPORATE_CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>PARENT_SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PARENT_SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>PARENT_CUST_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PARENT_CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REMIT_FROM_SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REMIT_FROM_SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REMIT_FROM_CUST_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REMIT_FROM_CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CRSPD_SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CRSPD_SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CRSPD_CUST_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CRSPD_CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CONSOL_BUS_UNIT</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CONSOL_BUS_UNIT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>VENDOR_SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VENDOR_SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>VENDOR_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>VENDOR_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REFER_TO_SETID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REFER_TO_SETID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REFER_TO_CUST_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REFER_TO_CUST_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REVIEW_DAYS</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REVIEW_DAYS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FORMER_NAME_1</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FORMER_NAME_1</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FORMER_NAME_2</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">40</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FORMER_NAME_2</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CNTCT_SEQ_NUM</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CNTCT_SEQ_NUM</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SUBCUST_USE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUBCUST_USE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SUBCUST_QUAL1</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUBCUST_QUAL1</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SUBCUST_QUAL2</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SUBCUST_QUAL2</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUR_RT_TYPE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUR_RT_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CURRENCY_CD</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CURRENCY_CD</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SHIP_TO_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SHIP_TO_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>BILL_TO_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>BILL_TO_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SOLD_TO_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SOLD_TO_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>BROKER_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>BROKER_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>INDIRECT_CUST_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>INDIRECT_CUST_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_LEVEL</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_LEVEL</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ADDRESS_SEQ_SOLD</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADDRESS_SEQ_SOLD</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CNTCT_SEQ_SOLD</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CNTCT_SEQ_SOLD</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ADDRESS_SEQ_SHIP</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADDRESS_SEQ_SHIP</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CNTCT_SEQ_SHIP</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CNTCT_SEQ_SHIP</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ADDRESS_SEQ_BRK</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADDRESS_SEQ_BRK</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ADDRESS_SEQ_IND</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ADDRESS_SEQ_IND</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>HOLD_UPDATE_SW</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>HOLD_UPDATE_SW</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ROLEUSER</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ROLEUSER</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>TAXPAYER_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">14</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TAXPAYER_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>WEB_URL</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">130</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>WEB_URL</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>STOCK_SYMBOL</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>STOCK_SYMBOL</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REPORTS_TO_SPONSOR</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REPORTS_TO_SPONSOR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SPNSR_LEVEL</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SPNSR_LEVEL</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SPNSR_TYPE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SPNSR_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SPNSR_PROGRAM</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SPNSR_PROGRAM</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>COST_LIV_INCR_PCT</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">5</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>COST_LIV_INCR_PCT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CFDA_NBR</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">5</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CFDA_NBR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>ALLOW_COPI</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>ALLOW_COPI</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>MULTI_PI</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>MULTI_PI</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FOREIGN_FLAG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FOREIGN_FLAG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FED_SP_TYPE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FED_SP_TYPE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>OFAC_STATUS</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>OFAC_STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>REASON_CD</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>REASON_CD</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FSS_OFFSET_DAYS</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FSS_OFFSET_DAYS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>GM_FEDERAL_FLAG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GM_FEDERAL_FLAG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>US_FLAG_CARRIER</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>US_FLAG_CARRIER</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>LOC_INDICATOR</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LOC_INDICATOR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>GM_LOC_SPONSOR_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">15</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GM_LOC_SPONSOR_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>GGOV_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GGOV_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FA_SPNSR_BASE_ID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FA_SPNSR_BASE_ID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>GM_DEL_LOC_REFS_SW</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GM_DEL_LOC_REFS_SW</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>GRANTS_SPONSOR_FLG</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>GRANTS_SPONSOR_FLG</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SPNSR_SALARY_CAP</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">13</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SPNSR_SALARY_CAP</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FEDERAL_INDICATOR</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FEDERAL_INDICATOR</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>TRADING_PARTNER</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>TRADING_PARTNER</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>IPAC_INTERFACE</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>IPAC_INTERFACE</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CNTCT_SEQ_IPAC</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CNTCT_SEQ_IPAC</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUSTOMER_ALC</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">8</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_ALC</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUSTOMER_DO</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">5</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUSTOMER_DO</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SYMBOL_REQ</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SYMBOL_REQ</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>SOURCE_SYSTEM</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>SOURCE_SYSTEM</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_USF_STATUS</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_USF_STATUS</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>EMPLID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">11</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>EMPLID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>FED_SHARE_PCT</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">5</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>FED_SHARE_PCT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CONT_ALLOW_PCT</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">5</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CONT_ALLOW_PCT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CONT_NO_ALLW_PCT</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">5</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CONT_NO_ALLW_PCT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C1_A</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C1_A</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C1_B</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C1_B</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C1_C</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C1_C</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C1_D</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">1</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C1_D</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C2</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">2</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C2</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C4</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">4</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C4</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C6</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C6</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C8</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">8</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C8</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C10_A</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C10_A</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C10_B</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C10_B</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C10_C</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C10_C</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C10_D</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">10</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C10_D</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C30_A</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C30_A</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C30_B</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C30_B</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C30_C</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C30_C</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_C30_D</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_C30_D</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N12_A</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N12_A</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N12_B</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N12_B</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N12_C</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N12_C</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N12_D</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">3</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N12_D</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N15_A</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N15_A</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N15_B</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N15_B</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N15_C</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N15_C</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>CUST_FIELD_N15_D</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>precision</key>
+            <value class="java.lang.String">15</value>
+          </entry>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">0</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>NUMBER</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>CUST_FIELD_N15_D</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>LAST_MAINT_OPRID</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>size</key>
+            <value class="java.lang.Long">30</value>
+          </entry>
+          <entry>
+            <key>unit</key>
+            <value class="java.lang.String">CHAR</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>VARCHAR2</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LAST_MAINT_OPRID</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>DATE_LAST_MAINT</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>DATE</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>DATE_LAST_MAINT</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+    <column>
+      <name>LASTUPDDTTM</name>
+      <dataTypeUsage>
+        <attributeValues>
+          <entry>
+            <key>scale</key>
+            <value class="java.lang.Long">6</value>
+          </entry>
+        </attributeValues>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>TIMESTAMP</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>false</notNull>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>LASTUPDDTTM</name>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <type>COLUMN</type>
+          </value>
+        </entry>
+      </properties>
+    </column>
+  </columns>
+  <indexes>
+    <index>
+      <name>PS0CUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>NAME1</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>NAME1</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS0CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24544</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS0CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24544</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS0CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24544</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PS0CUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24544</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PS1CUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>CNTCT_SEQ_NUM</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CNTCT_SEQ_NUM</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS1CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24545</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS1CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24545</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS1CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24545</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PS1CUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24545</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PSACUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>CORPORATE_CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CORPORATE_CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSACUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24546</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CORPORATE_SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CORPORATE_SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSACUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24546</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSACUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24546</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSACUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24546</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PSACUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24546</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>139264</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PSBCUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>REMIT_FROM_CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>REMIT_FROM_CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSBCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24547</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>REMIT_FROM_SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>REMIT_FROM_SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSBCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24547</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PSBCUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24547</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PSCCUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>CRSPD_CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CRSPD_CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSCCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24548</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CRSPD_SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CRSPD_SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSCCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24548</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PSCCUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24548</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PSDCUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>CRSPD_CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CRSPD_CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSDCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24549</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CRSPD_SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CRSPD_SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSDCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24549</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSDCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24549</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSDCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24549</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>CNTCT_SEQ_NUM</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CNTCT_SEQ_NUM</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSDCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24549</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PSDCUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24549</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PSECUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>VENDOR_SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>VENDOR_SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSECUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24550</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>VENDOR_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>VENDOR_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSECUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24550</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PSECUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24550</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PSFCUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>PARENT_CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>PARENT_CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSFCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24551</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>PARENT_SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>PARENT_SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PSFCUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24551</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>NORMAL</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PSFCUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24551</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>40960</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+    <index>
+      <name>PS_CUSTOMER</name>
+      <columnExpressions>
+        <columnExpression>
+          <expressionSource>CUST_ID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>CUST_ID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS_CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24543</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+        <columnExpression>
+          <expressionSource>SETID</expressionSource>
+          <orderType>ASC</orderType>
+          <properties>
+            <entry>
+              <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+              <value class="oracle.javatools.db.ReferenceID">
+                <name>SETID</name>
+                <parent class="oracle.javatools.db.ReferenceID">
+                  <name>PS_CUSTOMER</name>
+                  <identifier class="java.math.BigDecimal">24543</identifier>
+                  <parent class="oracle.javatools.db.ReferenceID">
+                    <name>PS_CUSTOMER</name>
+                    <identifier class="java.math.BigDecimal">24542</identifier>
+                    <schemaName>SYSADM</schemaName>
+                    <type>TABLE</type>
+                  </parent>
+                  <schemaName>SYSADM</schemaName>
+                  <type>INDEX</type>
+                </parent>
+                <type>IndexObject</type>
+              </value>
+            </entry>
+          </properties>
+        </columnExpression>
+      </columnExpressions>
+      <indexType>UNIQUE</indexType>
+      <parallelDegree>1</parallelDegree>
+      <properties>
+        <entry>
+          <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+          <value class="oracle.javatools.db.ReferenceID">
+            <name>PS_CUSTOMER</name>
+            <identifier class="java.math.BigDecimal">24543</identifier>
+            <parent class="oracle.javatools.db.ReferenceID">
+              <name>PS_CUSTOMER</name>
+              <identifier class="java.math.BigDecimal">24542</identifier>
+              <schemaName>SYSADM</schemaName>
+              <type>TABLE</type>
+            </parent>
+            <schemaName>SYSADM</schemaName>
+            <type>INDEX</type>
+          </value>
+        </entry>
+        <entry>
+          <key>OracleStorageProperties</key>
+          <value class="oracle.javatools.db.ora.OracleStorageProperties">
+            <bufferMode>DEFAULT</bufferMode>
+            <initialExtent>24576</initialExtent>
+            <initrans>2</initrans>
+            <logging>true</logging>
+            <maxExtent>0</maxExtent>
+            <minExtent>1</minExtent>
+            <nextExtent>106496</nextExtent>
+            <percentFree>10</percentFree>
+            <tablespaceID class="oracle.javatools.db.ReferenceID">
+              <name>PSINDEX</name>
+              <type>TABLESPACE</type>
+            </tablespaceID>
+          </value>
+        </entry>
+      </properties>
+      <reverse>false</reverse>
+      <schema>
+        <name>SYSADM</name>
+      </schema>
+      <systemGenerated>false</systemGenerated>
+    </index>
+  </indexes>
+  <properties>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_CONNECTION</key>
+      <value class="java.lang.String">fscm92</value>
+    </entry>
+    <entry>
+      <key>OfflineDBConstants.IMPORT_SOURCE_ID</key>
+      <value class="oracle.javatools.db.ReferenceID">
+        <name>PS_CUSTOMER</name>
+        <identifier class="java.math.BigDecimal">24542</identifier>
+        <schemaName>SYSADM</schemaName>
+        <type>TABLE</type>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleStorageProperties</key>
+      <value class="oracle.javatools.db.ora.OracleStorageProperties">
+        <bufferMode>DEFAULT</bufferMode>
+        <initialExtent>40960</initialExtent>
+        <initrans>1</initrans>
+        <logging>true</logging>
+        <maxExtent>0</maxExtent>
+        <minExtent>1</minExtent>
+        <nextExtent>106496</nextExtent>
+        <percentFree>10</percentFree>
+        <tablespaceID class="oracle.javatools.db.ReferenceID">
+          <name>OMLARGE</name>
+          <type>TABLESPACE</type>
+        </tablespaceID>
+      </value>
+    </entry>
+    <entry>
+      <key>OracleTableProperties</key>
+      <value class="oracle.javatools.db.ora.OracleTableProperties">
+        <parallelDegree>1</parallelDegree>
+        <tableCompression>NOCOMPRESS</tableCompression>
+      </value>
+    </entry>
+    <entry>
+      <key>TableType</key>
+      <value class="oracle.javatools.db.Table$TableType">NORMAL</value>
+    </entry>
+  </properties>
+  <schema>
+    <name>SYSADM</name>
+  </schema>
+</table>

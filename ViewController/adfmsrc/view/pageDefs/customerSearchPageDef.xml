@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="customerSearchPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomerView2" RangeSize="25" DataControl="AppModuleDataControl" id="CustomerView2Iterator"
+              ChangeEventPolicy="none"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomerView2Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree  IterBinding="CustomerView2Iterator" id="CustomerView2" ChangeEventPolicy="none">
+      <nodeDefinition DefName="model.CustomerView" Name="CustomerView20">
+        <AttrNames>
+          <Item Value="CustId" />
+          <Item Value="Name1"/>
+          <Item Value="Address1"/>
+          <Item Value="Address2"/>
+          <Item Value="City"/>
+           <Item Value="State"/>
+                      <Item Value="Postal"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

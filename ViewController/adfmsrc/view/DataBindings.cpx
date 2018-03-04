@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.1.3.9.1" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+    <pageMap>
+        <page path="/GvaaHome1.jsf" usageId="view_GvaaHome1PageDef"/>
+        <page path="/customerSearch.jsff" usageId="view_paymentProfilesPageDef"/>
+        <page path="/paymentProfileNew.jsff" usageId="view_paymentProfileNewPageDef"/>
+        <page path="/newProfileEntry.jsff" usageId="view_newProfileEntryPageDef"/>
+        <page path="/invoicesList.jsff" usageId="view_invoicesListPageDef"/>
+        <page path="/invoicesListWithProfiles.jsff" usageId="view_invoicesListWithProfilesPageDef"/>
+        <page path="/confirmPayment.jsff" usageId="view_invoicesListWithProfilesPageDef"/>
+        <page path="/confirmation.jsff" usageId="view_invoicesListWithProfilesPageDef"/>
+    </pageMap>
+    <definitionFactories>
+        <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+                 className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+        <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+                 className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+        <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    </definitionFactories>
+    <dataControlUsages>
+        <BC4JDataControl id="AppModuleDataControl" Package="model"
+                         FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                         SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                         SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                         xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    </dataControlUsages>
+    <pageDefinitionUsages>
+        <page id="view_GvaaHome1PageDef" path="view.pageDefs.GvaaHome1PageDef"/>
+        <page id="view_paymentProfilesPageDef" path="view.pageDefs.customerSearchPageDef"/>
+        <page id="view_paymentProfileNewPageDef" path="view.pageDefs.paymentProfileNewPageDef"/>
+        <page id="view_makePurchasePageDef" path="view.pageDefs.makePurchasePageDef"/>
+        <page id="view_newProfileEntryPageDef" path="view.pageDefs.newProfileEntryPageDef"/>
+        <page id="view_invoicesListPageDef" path="view.pageDefs.invoicesListPageDef"/>
+        <page id="view_invoicesListWithProfilesPageDef" path="view.pageDefs.invoicesListWithProfilesPageDef"/>
+    </pageDefinitionUsages>
+</Application>

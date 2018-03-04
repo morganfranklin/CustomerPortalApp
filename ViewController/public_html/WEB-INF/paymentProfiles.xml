@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="paymentProfiles">
+    <default-activity>customerSearch</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <task-flow-reentry>
+      <reentry-allowed/>
+    </task-flow-reentry>
+    <managed-bean id="__8">
+      <managed-bean-name>NewPaymentProfileBean</managed-bean-name>
+      <managed-bean-class>view.NewPaymentProfileBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <managed-property id="__21">
+        <property-name>myPaymentProfileBean</property-name>
+        <property-class>view.PaymentProfile</property-class>
+        <value>#{pageFlowScope.PaymentProfilePageflow}</value>
+      </managed-property>
+    </managed-bean>
+    <managed-bean id="__20">
+      <managed-bean-name>PaymentProfilePageflow</managed-bean-name>
+      <managed-bean-class>view.PaymentProfile</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="customerSearch">
+      <page>/customerSearch.jsff</page>
+    </view>
+    <view id="paymentProfileNew">
+      <page>/paymentProfileNew.jsff</page>
+    </view>
+    <view id="newProfileEntryView">
+      <page>/newProfileEntry.jsff</page>
+    </view>
+    <method-call id="setCustomerId">
+      <method>#{backingBeanScope.NewPaymentProfileBean.setCustomerId}</method>
+      <parameter>
+        <class>java.lang.String</class>
+        <value>#{data.view_paymentProfileNewPageDef.CustomerId}</value>
+      </parameter>
+      <parameter>
+        <class>java.lang.String</class>
+        <value>#{data.view_paymentProfileNewPageDef.ProfileToken}</value>
+      </parameter>
+      <return-value>default</return-value>
+      <outcome>
+        <fixed-outcome>default</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="callAdapterForCardEntry">
+      <method>#{backingBeanScope.NewPaymentProfileBean.callCreditCardAddition}</method>
+      <return-value>default</return-value>
+      <outcome>
+        <fixed-outcome>default</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="invoicesListView">
+      <page>/invoicesList.jsff</page>
+    </view>
+    <view id="confirmPayment">
+      <page>/confirmPayment.jsff</page>
+    </view>
+    <view id="confirmation">
+      <page>/confirmation.jsff</page>
+    </view>
+    <control-flow-rule id="__1">
+      <from-activity-id>customerSearch</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toPaymentProfileNew</from-outcome>
+        <to-activity-id>paymentProfileNew</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__25">
+        <from-outcome>toOpenInvoices</from-outcome>
+        <to-activity-id>invoicesListView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>paymentProfileNew</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>backToPaymentProfiles</from-outcome>
+        <to-activity-id>customerSearch</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>toNewProfileEntry</from-outcome>
+        <to-activity-id>setCustomerId</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome>toInvoiceList</from-outcome>
+        <to-activity-id>invoicesListView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>newProfileEntryView</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>backToPaymentProfileNew</from-outcome>
+        <to-activity-id>paymentProfileNew</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__11">
+        <from-outcome>proceedWithEntry</from-outcome>
+        <to-activity-id>callAdapterForCardEntry</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>setCustomerId</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>default</from-outcome>
+        <to-activity-id>newProfileEntryView</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id>callAdapterForCardEntry</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome>default</from-outcome>
+        <to-activity-id>paymentProfileNew</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>invoicesListView</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>backToProfileView</from-outcome>
+        <to-activity-id>customerSearch</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>toConfirmPayment</from-outcome>
+        <to-activity-id>confirmPayment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id>confirmPayment</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome>toInvoiceList</from-outcome>
+        <to-activity-id>invoicesListView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__22">
+        <from-outcome>toPaymentConfirmation</from-outcome>
+        <to-activity-id>confirmation</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id>confirmation</from-activity-id>
+      <control-flow-case id="__30">
+        <from-outcome>toInvoiceList</from-outcome>
+        <to-activity-id>invoicesListView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__23">
+        <from-outcome>toHome</from-outcome>
+        <to-activity-id>customerSearch</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

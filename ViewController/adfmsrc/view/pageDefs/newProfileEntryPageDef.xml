@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="newProfileEntryPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentProfileViewObject2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PaymentProfileViewObject2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PaymentProfileViewObject2Iterator" id="CustomerId">
+      <AttrNames>
+        <Item Value="CustomerId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

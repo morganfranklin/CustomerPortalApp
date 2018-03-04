@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelBox text="Selected Customer Information" id="pb1">
+        <af:panelGridLayout id="pgl1">
+            <af:gridRow marginTop="0px" height="auto" id="gr8">
+                <af:gridCell marginStart="0px" width="25%" id="gc19">
+                    <af:outputFormatted value="Customer ID" id="of13" inlineStyle="font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="0px" width="25%" id="gc20">
+                    <af:outputFormatted value="#{bindings.CustId.inputValue}" id="of14"/>
+                </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="auto" id="gr3">
+                <af:gridCell marginStart="0px" width="25%" id="gc3">
+                    <af:outputFormatted value="Customer Name" id="of1" inlineStyle="font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="0px" width="25%" id="gc17">
+                    <af:outputFormatted value="#{bindings.Name1.inputValue}" id="of2"/>
+                </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="auto" id="gr9">
+                <af:gridCell marginStart="0px" width="25%" id="gc21">
+                    <af:outputFormatted value="Address Detail" id="of15" inlineStyle="font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="0px" width="25%" id="gc23">
+                    <af:outputFormatted value="#{bindings.Address1.inputValue} #{bindings.Address2.inputValue}  #{bindings.City.inputValue} #{bindings.State.inputValue} #{bindings.Country.inputValue} #{bindings.Postal.inputValue}"
+                                        id="of16"/>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:panelBox>
+    <af:panelBox text="Payment Profiles" id="pb2">
+        <f:facet name="toolbar"/>
+        <af:panelGridLayout id="pgl3">
+            <af:gridRow marginTop="0px" height="auto" id="gr1">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc1" valign="stretch" halign="stretch">
+                    <af:listView value="#{bindings.PaymentProfileViewObject2.collectionModel}" var="item"
+                                 emptyText="#{bindings.PaymentProfileViewObject2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                 selection="single"
+                                 selectedRowKeys="#{bindings.PaymentProfileViewObject2.collectionModel.selectedRow}"
+                                 selectionListener="#{bindings.PaymentProfileViewObject2.collectionModel.makeCurrent}"
+                                 fetchSize="#{bindings.PaymentProfileViewObject2.rangeSize}" id="lv1">
+                        <af:listItem id="li1">
+                            <af:panelGridLayout id="pgl2">
+                                <af:gridRow marginTop="0px" height="auto" id="gr7">
+                                    <af:gridCell marginStart="0px" width="25%" id="gc18">
+                                        <af:outputFormatted value="Name on Account" id="of11"
+                                                            inlineStyle="font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" id="gc4">
+                                        <af:outputFormatted value="#{item.bindings.ProfileName.inputValue}" id="of12"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" id="gc5">
+                                        <af:outputFormatted value="Payment Method" id="of3"
+                                                            inlineStyle="font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" marginEnd="0px" id="gc6">
+                                        <af:outputFormatted value="#{item.bindings.ProfileMethod.inputValue}" id="of4"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="0px" height="auto" id="gr4">
+                                    <af:gridCell marginStart="0px" width="25%" id="gc7">
+                                        <af:outputFormatted value="Account Number" id="of5"
+                                                            inlineStyle="font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" id="gc8">
+                                        <af:outputFormatted value="#{item.bindings.ProfileAccountNumber.inputValue}"
+                                                            id="of6"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" id="gc9">
+                                        <af:outputFormatted value="Expiration Date" id="of7"
+                                                            inlineStyle="font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" marginEnd="0px" id="gc10">
+                                        <af:outputFormatted value="#{item.bindings.ProfileExpiry.inputValue}" id="of8"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="0px" height="auto" id="gr10">
+                                    <af:gridCell marginStart="0px" width="25%" id="gc25">
+                                        <af:outputFormatted value="Email" id="of17" inlineStyle="font-weight:bold;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" width="25%" id="gc22">
+                                        <af:outputFormatted value="#{item.bindings.email.inputValue}" id="of18"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr5">
+                                    <af:gridCell marginStart="0px" width="25%" id="gc11">
+                                        <af:outputFormatted value="CyberSource Token Id" id="of9"
+                                                            inlineStyle="font-weight:bold; color:Gray;"/>
+                                    </af:gridCell>
+                                    <af:gridCell marginStart="0px" columnSpan="3" marginEnd="0px" id="gc12">
+                                        <af:outputFormatted value="#{item.bindings.ProfileToken.inputValue}" id="of10"
+                                                            inlineStyle="color:Gray;"/>
+                                    </af:gridCell>
+                                </af:gridRow>
+                                <af:gridRow id="gr6">
+                                    <af:gridCell id="gc13" width="50%"/>
+                                    <af:gridCell id="gc14" width="75px">
+                                        <af:button text="Pay" id="b3" action="toInvoiceList"/>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc15" width="75px">
+                                        <af:goButton text="Update" targetFrame="_blank"
+                                                     destination="https://testsecureacceptance.cybersource.com/token/update"></af:goButton>
+                                    </af:gridCell>
+                                    <af:gridCell id="gc16" width="auto"/>
+                                </af:gridRow>
+                            </af:panelGridLayout>
+                        </af:listItem>
+                    </af:listView>
+                </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr2">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc2">
+                    <af:button text="Back" id="b1" action="backToPaymentProfiles"/>
+                    <!--<af:button text="New" id="b2" action="toNewProfileEntry"/>-->
+                    <af:button text="New" id="b2" targetFrame="_blank"
+                               destination="https://morganfranklinlabs.us/CyberSourceFeedback-ViewController-context-root/tokenfeedback?customerId=#{bindings.CustId.inputValue}&amp;forename=Tomasz&amp;surname=Zarzycki&amp;email=tomasz.zarzycki@morganfranklin.com&amp;address1=#{bindings.Address1.inputValue}&amp;city=#{bindings.City.inputValue}&amp;postal=#{bindings.Postal.inputValue}&amp;state=#{bindings.State.inputValue}&amp;phone=2029040658"/>
+                    <af:outputText value="#{bindings.CustomerId.inputValue}"
+                                   shortDesc="#{bindings.CustomerId.hints.tooltip}" id="ot1"
+                                   inlineStyle="color:White;"/>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:panelBox>
+</ui:composition>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="invoicesListWithProfilesPageDef"
+                Package="view.pageDefs">
+    <parameters/>
+    <executables>
+        <variableIterator id="variables"/>
+        <iterator Binds="PaymentProfileViewObject2" RangeSize="25" DataControl="AppModuleDataControl"
+                  id="PaymentProfileViewObject2Iterator"/>
+        <iterator Binds="OpenItems1" RangeSize="25" DataControl="AppModuleDataControl" id="OpenItems1Iterator"
+                  ChangeEventPolicy="none"/>
+        <iterator Binds="CustomerView2" RangeSize="10" DataControl="AppModuleDataControl" id="CustomerView2Iterator"/>
+    </executables>
+    <bindings>
+        <tree IterBinding="OpenItems1Iterator" id="OpenItems1" ChangeEventPolicy="none">
+            <nodeDefinition DefName="model.OpenItems" Name="OpenItems10">
+                <AttrNames>
+                    <Item Value="Item"/>
+                    <Item Value="DueDt"/>
+                    <Item Value="BalAmt"/>
+                    <Item Value="BalCurrency"/>
+                    <Item Value="paymentAmount"/>
+                </AttrNames>
+            </nodeDefinition>
+        </tree>
+        <tree IterBinding="PaymentProfileViewObject2Iterator" id="PaymentProfileViewObject2">
+            <nodeDefinition DefName="model.PaymentProfileViewObject" Name="PaymentProfileViewObject20">
+                <AttrNames>
+                    <Item Value="CustomerId"/>
+                    <Item Value="ProfileName"/>
+                    <Item Value="ProfileMethod"/>
+                    <Item Value="ProfileAccountNumber"/>
+                    <Item Value="ProfileExpiry"/>
+                    <Item Value="ProfileId"/>
+                </AttrNames>
+            </nodeDefinition>
+        </tree>
+        <attributeValues IterBinding="PaymentProfileViewObject2Iterator" id="ProfileName">
+            <AttrNames>
+                <Item Value="ProfileName"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="PaymentProfileViewObject2Iterator" id="ProfileId">
+            <AttrNames>
+                <Item Value="ProfileId"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="PaymentProfileViewObject2Iterator" id="ProfileAccountNumber">
+            <AttrNames>
+                <Item Value="ProfileAccountNumber"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="Name1">
+            <AttrNames>
+                <Item Value="Name1"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="CustId">
+            <AttrNames>
+                <Item Value="CustId"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="Address1">
+            <AttrNames>
+                <Item Value="Address1"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="Address2">
+            <AttrNames>
+                <Item Value="Address2"/>
+            </AttrNames>
+        </attributeValues>
+         <attributeValues IterBinding="CustomerView2Iterator" id="Country">
+            <AttrNames>
+                <Item Value="Country"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="City">
+            <AttrNames>
+                <Item Value="City"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="State">
+            <AttrNames>
+                <Item Value="State"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="CustomerView2Iterator" id="Postal">
+            <AttrNames>
+                <Item Value="Postal"/>
+            </AttrNames>
+        </attributeValues>
+        <attributeValues IterBinding="PaymentProfileViewObject2Iterator" id="email">
+            <AttrNames>
+                <Item Value="email"/>
+            </AttrNames>
+        </attributeValues>
+        <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false"
+                Action="rollbackTransaction"/>
+    </bindings>
+</pageDefinition>

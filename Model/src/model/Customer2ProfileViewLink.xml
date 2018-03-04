@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Customer2ProfileViewLink"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.Customer2ProfileViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CustomerView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.CustomerView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="CustomerView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.CustomerView.CustId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="PaymentProfileViewObject"
+    Cardinality="-1"
+    Owner="model.PaymentProfileViewObject">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PaymentProfileViewObject"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.PaymentProfileViewObject.CustomerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

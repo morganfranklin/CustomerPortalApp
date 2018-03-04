@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="GvaHome1">
+    <page>/GvaaHome1.jsf</page>
+  </view>
+  <managed-bean id="__1">
+    <managed-bean-name>MainDynamicRegionBean</managed-bean-name>
+    <managed-bean-class>view.MainDynamicRegionBean</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <managed-property id="__3">
+      <property-name>myPageFlowBean</property-name>
+      <property-class>view.GvcMain</property-class>
+      <value>#{pageFlowScope.GvcMainBean}</value>
+    </managed-property>
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>GvcMainBean</managed-bean-name>
+    <managed-bean-class>view.GvcMain</managed-bean-class>
+    <managed-bean-scope>pageFlow</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

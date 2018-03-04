@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>/makePurchase.jsf</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/createProfile.jsf</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/homePageTemplate1.jsf</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/homeTemplate1.jsf</pagetemplate-jsp-ui-def>
+</pageTemplateDefs>

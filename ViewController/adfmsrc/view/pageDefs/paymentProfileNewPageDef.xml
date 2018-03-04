@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="paymentProfileNewPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentProfileViewObject2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="PaymentProfileViewObject2Iterator" ChangeEventPolicy="none"/>
+    <iterator Binds="CustomerView2" RangeSize="10" DataControl="AppModuleDataControl" id="CustomerView2Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="PaymentProfileViewObject2Iterator" id="CustomerId">
+      <AttrNames>
+        <Item Value="CustomerId"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="PaymentProfileViewObject2Iterator" id="PaymentProfileViewObject2" ChangeEventPolicy="none">
+      <nodeDefinition DefName="model.PaymentProfileViewObject" Name="PaymentProfileViewObject20">
+        <AttrNames>
+          <Item Value="CustomerId"/>
+          <Item Value="ProfileName"/>
+          <Item Value="ProfileMethod"/>
+          <Item Value="ProfileAccountNumber"/>
+          <Item Value="ProfileExpiry"/>
+          <Item Value="ProfileToken"/>
+          <Item Value="email"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CustomerView2Iterator" id="Name1">
+      <AttrNames>
+        <Item Value="Name1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerView2Iterator" id="Address1">
+      <AttrNames>
+        <Item Value="Address1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerView2Iterator" id="CustId">
+      <AttrNames>
+        <Item Value="CustId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerView2Iterator" id="Address2">
+      <AttrNames>
+        <Item Value="Address2"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PaymentProfileViewObject2Iterator" id="setCurrentRowWithKeyValue"
+            InstanceName="AppModuleDataControl.PaymentProfileViewObject2" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="false" Action="setCurrentRowWithKeyValue">
+      <NamedData NDName="rowKey" NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="CustomerView2Iterator" id="Country">
+      <AttrNames>
+        <Item Value="Country"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerView2Iterator" id="City">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerView2Iterator" id="State">
+      <AttrNames>
+        <Item Value="State"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CustomerView2Iterator" id="Postal">
+      <AttrNames>
+        <Item Value="Postal"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="Customer Billing and Self-Service Portal" id="d1">
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/tabletFirstTemplate.jspx" id="pt1">
+                <f:facet name="header">
+                    <af:outputText value="Customer Billing and Self-Service Center" id="ot1"/>
+                </f:facet>
+                <f:facet name="status">
+                    <af:menuBar id="mb1">
+                        <af:menu text="Tomasz Zarzycki" id="m2">
+                            <af:commandMenuItem text="Sign Out" id="cmi1"/>
+                        </af:menu>
+                    </af:menuBar>
+                </f:facet>
+                <f:facet name="appNav">
+                    <af:button text="Home" id="b2" selected="true" icon="#{resource['images:func_globe_16_onb.png']}"
+                               styleClass="AFAppNavbarButton" type="radio"/>
+                    <af:button text="Customers" id="b3" styleClass="AFAppNavbarButton" type="radio"
+                               icon="#{resource['images:func_group_16_ena.png']}"
+                               hoverIcon="#{resource['images:func_group_16_act.png']}"/>
+                    <af:button text="Reports" id="b4" styleClass="AFAppNavbarButton" type="radio"
+                               icon="#{resource['images:func_barchartvertical_16_ena.png']}"
+                               hoverIcon="#{resource['images:func_barchartvertical_16_act.png']}"/>
+                    <af:button text="Setup" id="b5" styleClass="AFAppNavbarButton"
+                               icon="#{resource['images:func_function_16_ena.png']}"
+                               hoverIcon="#{resource['images:func_function_16_act.png']}" type="radio"/>
+                </f:facet>
+                <f:facet name="globalLinks">
+                    <af:outputText value="Covanta Energy, Inc." id="ot2"/>
+                </f:facet>
+                <f:facet name="footer"/>
+                <f:facet name="center"  >
+                    <af:panelGridLayout id="pgl3">
+                        <af:gridRow marginTop="5px" height="auto" id="gr6">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="stretch">
+                                <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"
+                                           binding="#{backingBeanScope.MainDynamicRegionBean.regionbinding}"
+                                           partialTriggers="::l1 ::l2 ::l3"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="start">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1" valign="stretch"
+                                         halign="stretch">
+                                <af:panelBox text="Customer Portal" id="pb2">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl4">
+                                        <af:gridRow marginTop="0px" height="auto" id="gr8">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc8">
+                                                <af:link text="Home"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.portalPayment}"
+                                                         id="l1"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr9">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc9">
+                                                <af:link text="Payment Profiles"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.paymentProfiles}"
+                                                         id="l2"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr10">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc10">
+                                                <af:link text="Invoices"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.paymentProfileNew}"
+                                                         id="l3"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2" halign="stretch"
+                                         valign="stretch">
+                                <af:panelBox text="Contract Reports" id="pb4">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl41">
+                                        <af:gridRow marginTop="0px" height="auto" id="gr81">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc81">
+                                                <af:link text="Summary aging"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.portalPayment}"
+                                                         id="l11"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr91">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc91">
+                                                <af:link text="Open Items"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.paymentProfiles}"
+                                                         id="l21"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr101">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc101">
+                                                <af:link text="Collector actions"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.paymentProfileNew}"
+                                                         id="l31"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3" halign="stretch"
+                                         valign="stretch">
+                                <af:panelBox text="Administration" id="pb3">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelGridLayout id="pgl42">
+                                        <af:gridRow marginTop="0px" height="auto" id="gr82">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc82">
+                                                <af:link text="Contract types"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.portalPayment}"
+                                                         id="l12"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr92">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc92">
+                                                <af:link text="Integration"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.paymentProfiles}"
+                                                         id="l22"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr103">
+                                            <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc103">
+                                                <af:link text="Processing"
+                                                         action="#{backingBeanScope.MainDynamicRegionBean.paymentProfileNew}"
+                                                         id="l33"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:panelBox>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                    <af:panelGridLayout id="pgl2">
+                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="end"/>
+                <f:attribute name="endWidth" value="0px"/>
+                <f:attribute name="startWidth" value="250px"/>
+                <f:attribute name="showFooter" value="false"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
+  

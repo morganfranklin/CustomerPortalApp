@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+.AFBrandingBarLogoLarge {
+    background-image: url("covanta_m.png");; 
+    width: 210px; 
+    height: 2.7em; 
+}

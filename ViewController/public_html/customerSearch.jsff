@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelBox text="Customer Search" id="pb1">
+        <f:facet name="toolbar"/>
+        <af:panelGridLayout id="pgl1">
+            <af:gridRow marginTop="0px" height="auto" id="gr0">
+                <af:gridCell width="100%" marginEnd="0px" id="gc0" halign="stretch">
+                    <af:panelGroupLayout layout="vertical" id="pgl2">
+                        <af:panelHeader text=" " id="ph1" size="5">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::resId1"
+                                      binding="#{backingBeanScope.NewPaymentProfileBean.queryBinding}"/>
+                        </af:panelHeader>
+                        <af:table value="#{bindings.CustomerView2.collectionModel}" var="row"
+                                  rows="#{bindings.CustomerView2.rangeSize}" autoHeightRows="25"
+                                  emptyText="#{bindings.CustomerView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="1" columnStretching="multiple" styleClass="AFStretchWidth"
+                                  selectedRowKeys="#{bindings.CustomerView2.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.CustomerView2.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.CustomerView2.rangeSize}" id="resId1">
+                            <af:column headerText="Customer ID" id="resId1c1">
+                                <af:link text="#{row.CustId}" id="l1" action="toPaymentProfileNew"
+                                         actionListener="#{backingBeanScope.NewPaymentProfileBean.toPaymentProfileActionListener}"/>
+                            </af:column>
+                            <af:column headerText="Customer Name" id="resId1c2">
+                                <af:outputText value="#{row.Name1}"
+                                               shortDesc="#{bindings.CustomerView2.hints.Name1.tooltip}" id="ot2"/>
+                            </af:column>
+                            <af:column headerText="Address" id="c2">
+                                <af:outputText value="#{row.Address1} #{row.Address2}" id="ot1"/>
+                            </af:column>
+                            <af:column headerText="City" id="c3">
+                                <af:outputText value="#{row.City}"
+                                               shortDesc="#{bindings.CustomerView2.hints.City.tooltip}" id="ot3"/>
+                            </af:column>
+                            <af:column headerText="State" id="c4">
+                                <af:outputText value="#{row.State}"
+                                               shortDesc="#{bindings.CustomerView2.hints.State.tooltip}" id="ot4"/>
+                            </af:column>
+                            <af:column headerText="Postal" id="c5">
+                                <af:outputText value="#{row.Postal}"
+                                               shortDesc="#{bindings.CustomerView2.hints.Postal.tooltip}" id="ot5"/>
+                            </af:column>
+                            <af:column id="c1" headerText="Open Items">
+                                <af:link text="See open items" id="l2" action="toOpenInvoices"
+                                         actionListener="#{backingBeanScope.NewPaymentProfileBean.toOpenInvoicesActionListener}"/>
+                            </af:column>
+                        </af:table>
+                    </af:panelGroupLayout>
+                </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="auto" id="gr1">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc1" halign="stretch"/>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="50px" marginBottom="0px" id="gr2">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc2"/>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:panelBox>
+</ui:composition>

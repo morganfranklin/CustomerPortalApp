@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="US-ASCII" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="paymentProfileNew">
+    <default-activity>paymentProfileNewView</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="paymentProfileNewView">
+      <page>/portalPayment.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

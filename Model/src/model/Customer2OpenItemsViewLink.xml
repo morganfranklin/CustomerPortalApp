@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Customer2OpenItemsViewLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.Customer2OpenItemsViewLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="CustomerView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.CustomerView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_accessor" Value="true"/>
+      <Attr Name="_finderName" Value="CustomerView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.CustomerView.CustId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="OpenItems"
+    Cardinality="-1"
+    Owner="model.OpenItems">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="OpenItems"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.OpenItems.CustId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

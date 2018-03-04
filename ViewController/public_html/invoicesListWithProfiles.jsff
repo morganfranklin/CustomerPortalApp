@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelBox text="Open Items List" id="pb1">
+        <f:facet name="toolbar"/>
+        <af:panelGridLayout  id="pgl1" binding="#{backingBeanScope.NewPaymentProfileBean.gridBinding}">
+            <af:gridRow marginTop="0px" height="auto" id="gr1">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc1"/>
+            </af:gridRow>
+            <af:gridRow marginTop="0px" height="auto" id="gr2">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc2" halign="stretch">
+                    <af:table value="#{bindings.OpenItems1.collectionModel}" var="row"
+                              rows="#{bindings.OpenItems1.rangeSize}"
+                              emptyText="#{bindings.OpenItems1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              columnStretching="last" rowBandingInterval="0" contentDelivery="immediate"
+                              styleClass="AFStretchWidth"
+                              selectedRowKeys="#{bindings.OpenItems1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.OpenItems1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.OpenItems1.rangeSize}" id="t1"
+                              selectionEventDelay="enabled" partialTriggers="::cb1"
+                              binding="#{backingBeanScope.NewPaymentProfileBean.invoiceTableBinding}">
+                        <af:column align="center" headerText="Select" id="c1" width="15">
+                            <af:selectBooleanCheckbox value="#{row.selected}" autoSubmit="true"
+                                                      valueChangeListener="#{backingBeanScope.NewPaymentProfileBean.selectedInvoiceValueChangeListener}"
+                                                      id="sbc1">
+                                <?audit suppress oracle.adf.faces.compnotlabelled?>
+                            </af:selectBooleanCheckbox>
+                            <f:facet name="header">
+                                <af:selectBooleanCheckbox id="sbc2" autoSubmit="true"
+                                                          valueChangeListener="#{backingBeanScope.NewPaymentProfileBean.selectedAllTableValueChangeListener}">
+                                    <?audit suppress oracle.adf.faces.compnotlabelled?>
+                                </af:selectBooleanCheckbox>
+                            </f:facet>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.Item.name}" sortable="true"
+                                   headerText="Invoice" id="c7">
+                            <af:outputText value="#{row.Item}" shortDesc="#{bindings.OpenItems1.hints.Item.tooltip}"
+                                           id="ot1"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.DueDt.name}" sortable="true"
+                                   headerText="Due Date" id="c2">
+                            <af:outputText value="#{row.DueDt}" shortDesc="#{bindings.OpenItems1.hints.DueDt.tooltip}"
+                                           id="ot2">
+                                <af:convertDateTime pattern="#{bindings.OpenItems1.hints.DueDt.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalAmt.name}" sortable="true"
+                                   headerText="Open Amount" id="c3" width="100">
+                            <af:outputText value="#{row.BalAmt}" shortDesc="#{bindings.OpenItems1.hints.BalAmt.tooltip}"
+                                           id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OpenItems1.hints.BalAmt.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalCurrency.name}" sortable="true"
+                                   headerText="Currency" id="c4" width="59">
+                            <af:outputText value="#{row.BalCurrency}"
+                                           shortDesc="#{bindings.OpenItems1.hints.BalCurrency.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalAmt.name}" sortable="true"
+                                   headerText="Open Amount (USD)" id="c5">
+                            <af:outputText value="#{row.BalAmt}" shortDesc="#{bindings.OpenItems1.hints.BalAmt.tooltip}"
+                                           id="ot5">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OpenItems1.hints.BalAmt.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column id="c6" headerText="Payment Amount"
+                                   sortProperty="#{bindings.OpenItems1.hints.paymentAmount.name}" sortable="true">
+                            <af:inputText autoSubmit="true" value="#{row.paymentAmount}" id="it2">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.OpenItems1.hints.paymentAmount.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column id="c8" headerText="Pay" width="25">
+                            <af:button text="Pay"
+                                       actionListener="#{backingBeanScope.NewPaymentProfileBean.payParticularInvoice}"
+                                       id="b7"/>
+                        </af:column>
+                    </af:table>
+                </af:gridCell>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" marginBottom="0px" id="gr3">
+                <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc3" halign="stretch" valign="stretch">
+                    <af:panelGridLayout id="pgl3">
+                        <af:gridRow marginTop="0px" height="auto" id="gr6">
+                            <af:gridCell marginStart="0px" width="30%" id="gc4">
+                                <af:outputText inlineStyle="font-weight:bold;" value="Payment Profile Name" id="ot6"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="0px" width="30%" id="gc8">
+                                <af:outputText value="#{bindings.ProfileName.inputValue}"
+                                              shortDesc="#{bindings.ProfileName.hints.tooltip}" id="ot8"
+                                           />
+                            </af:gridCell>
+                            <!-- <af:gridCell marginStart="0px" width="20%" marginEnd="0px" id="gc5">
+                                <af:outputText inlineStyle="font-weight:bold;" value="Total Payment Amount" shortDesc=""
+                                               id="ot9"/>
+                            </af:gridCell>-->
+                            <af:gridCell marginStart="0px" width="40%" marginEnd="0px" id="gc9">
+                                <af:inputText id="it3" partialTriggers="t1:it2 t1:sbc1 t1:sbc2 cb1"
+                                              label="Total Payment Amount"
+                                              value="#{backingBeanScope.NewPaymentProfileBean.myPaymentProfileBean.totalPaymentAmount}"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="0px" id="gr5">
+                            <af:gridCell marginStart="0px" width="15%" id="gc10">
+                                <af:outputText value="Account Number" shortDesc="#{bindings.ProfileName.hints.tooltip}"
+                                               inlineStyle="font-weight:bold;" id="ot10"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="0px" width="15%" id="gc6">
+                                <af:outputText value="#{bindings.ProfileAccountNumber.inputValue}"
+                                               shortDesc="#{bindings.ProfileAccountNumber.hints.tooltip}" id="ot7"/>
+                            </af:gridCell>
+                            <af:gridCell marginStart="0px" width="70%" marginEnd="0px" id="gc7">
+                                <!--    <af:commandButton actionListener="#{backingBeanScope.NewPaymentProfileBean.updateTotalPaymentAmount}"
+                                                  text="Update" id="b3"/>-->
+                                <af:button text="Apply Against Oldest" id="b4"
+                                           actionListener="#{backingBeanScope.NewPaymentProfileBean.applyAgainstOldestActionListener}"/>
+                                <af:button text="Pay All"
+                                           actionListener="#{backingBeanScope.NewPaymentProfileBean.payAllActionListener}"
+                                           id="cb1"/>
+                                <af:button text="On Account" id="b5"/>
+                                <af:button text="Charge" action="toConfirmPayment" id="b1"/>
+                                <af:button text="Cancel" id="b2" action="backToProfileView"/>
+                            </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:gridCell>
+            </af:gridRow>
+        </af:panelGridLayout>
+    </af:panelBox>
+    <af:panelBox text="Payment Profiles" id="pb2">
+        <f:facet name="toolbar"/>
+        <af:listView value="#{bindings.PaymentProfileViewObject2.collectionModel}" var="item"
+                     emptyText="#{bindings.PaymentProfileViewObject2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                     fetchSize="#{bindings.PaymentProfileViewObject2.rangeSize}" id="lv1">
+            <af:listItem id="li1">
+                <af:panelGridLayout id="pgl2">
+                    <af:gridRow marginTop="0px" height="auto" id="gr4">
+                        <af:gridCell marginStart="0px" width="20%" id="gc5">
+                            <af:outputText value="Account Holder"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.CustomerId.tooltip}"
+                                           id="ot17" inlineStyle="font-weight:bold;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" width="30%" id="gc18">
+                            <af:outputText value="#{item.ProfileName}"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.ProfileName.tooltip}"
+                                           id="ot9"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" width="20%" id="gc19">
+                            <af:outputText value="Account Type"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.CustomerId.tooltip}"
+                                           id="ot18" inlineStyle="font-weight:bold;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" width="30%" marginEnd="0px" id="gc11">
+                            <af:outputText value="#{item.ProfileMethod}"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.ProfileMethod.tooltip}"
+                                           id="ot11"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                    <af:gridRow marginTop="0px" height="auto" id="gr7">
+                        <af:gridCell marginStart="0px" width="20%" id="gc12">
+                            <af:outputText value="Account Number"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.CustomerId.tooltip}"
+                                           id="ot12" inlineStyle="font-weight:bold;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" width="30%" id="gc13">
+                            <af:outputText value="#{item.ProfileAccountNumber}"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.ProfileAccountNumber.tooltip}"
+                                           id="ot13"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" width="20%" id="gc14">
+                            <af:outputText value="Expiration Date"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.CustomerId.tooltip}"
+                                           id="ot14" inlineStyle="font-weight:bold;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" width="30%" marginEnd="0px" id="gc15">
+                            <af:outputText value="#{item.ProfileExpiry}"
+                                           shortDesc="#{bindings.PaymentProfileViewObject2.hints.ProfileExpiry.tooltip}"
+                                           id="ot15"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                    <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr8">
+                        <af:gridCell marginStart="0px" columnSpan="2" id="gc16">
+                            <af:panelLabelAndMessage label="#{bindings.ProfileId.hints.label}" id="plam3"
+                                                     inlineStyle="color:Gray;">
+                                <af:outputText value="#{bindings.ProfileId.inputValue}"
+                                               shortDesc="#{bindings.ProfileId.hints.tooltip}" id="ot16"/>
+                            </af:panelLabelAndMessage>
+                        </af:gridCell>
+                        <af:gridCell marginStart="0px" columnSpan="2" marginEnd="0px" id="gc17">
+                            <af:button text="Pay Using This Profile" id="b3"
+                                       actionListener="#{backingBeanScope.NewPaymentProfileBean.payUsingThisProfile}">
+                             
+                                <f:attribute name="profileId" value="#{item.rowKeyStr}"></f:attribute>
+                            </af:button>
+                            <af:button text="Open Item" id="b6"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:listItem>
+        </af:listView>
+    </af:panelBox>
+</ui:composition>

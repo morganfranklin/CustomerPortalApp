@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelBox text="Home" id="pb1" showDisclosure="false" showHeader="never">
+    <f:facet name="toolbar"/>
+    <af:panelGridLayout id="pgl1">
+      <af:gridRow marginTop="5px" height="auto" id="gr1">
+        <af:gridCell marginStart="5px" width="50%" id="gc1" halign="stretch" valign="stretch">
+          <af:panelBox text="Contract Management" id="pb2" showDisclosure="false" showHeader="never">
+            <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl1" inlineStyle="alignment-adjust:auto;">
+              <af:image source="/skins/covanta_xpe/icon1.png" id="i1"/>
+              <af:outputFormatted value="Contract Management" id="of1" inlineStyle="font-weight:bold;"/>
+              <af:outputFormatted value="Lorem ipsum dolor sit amet." id="of2" rendered="false"/>
+              <f:facet name="footer"/>
+            </af:panelFormLayout>
+          </af:panelBox>
+        </af:gridCell>
+        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2" halign="stretch" valign="stretch">
+          <af:panelBox text="Customer Portal - Internal" id="pb4" showDisclosure="false" showHeader="never">
+            <f:facet name="toolbar"/>
+                        <af:panelFormLayout id="pfl2" inlineStyle="alignment-adjust:auto;">
+              <af:image source="/skins/covanta_xpe/icon2.png" id="i2"/>
+              <af:outputFormatted value="Customer Portal - Internal" id="of3" inlineStyle="font-weight:bold;"/>
+              <af:outputFormatted value="Lorem ipsum dolor sit amet." id="of4" rendered="false"/>
+              <f:facet name="footer"/>
+            </af:panelFormLayout>
+          </af:panelBox>
+        </af:gridCell>
+      </af:gridRow>
+      <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+        <af:gridCell marginStart="5px" width="50%" id="gc3" halign="stretch" valign="stretch">
+          <af:panelBox text="Billing" id="pb3" showDisclosure="false" showHeader="never">
+            <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl3" inlineStyle="alignment-adjust:auto;">
+              <af:image source="/skins/covanta_xpe/icon3.png" id="i3"/>
+              <af:outputFormatted value="Billing" id="of5" inlineStyle="font-weight:bold;"/>
+              <af:outputFormatted value="Lorem ipsum dolor sit amet." id="of6" rendered="false"/>
+              <f:facet name="footer"/>
+            </af:panelFormLayout>
+          </af:panelBox>
+        </af:gridCell>
+        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4" halign="stretch" valign="stretch">
+          <af:panelBox text="Administration" id="pb5" showDisclosure="false" showHeader="never">
+            <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl4" inlineStyle="alignment-adjust:auto;">
+              <af:image source="/skins/covanta_xpe/icon4.png" id="i4"/>
+              <af:outputFormatted value="Administration" id="of7" inlineStyle="font-weight:bold;"/>
+              <af:outputFormatted value="Lorem ipsum dolor sit amet." id="of8" rendered="false"/>
+              <f:facet name="footer"/>
+            </af:panelFormLayout>
+          </af:panelBox>
+        </af:gridCell>
+      </af:gridRow>
+    </af:panelGridLayout>
+  </af:panelBox>
+</ui:composition>
