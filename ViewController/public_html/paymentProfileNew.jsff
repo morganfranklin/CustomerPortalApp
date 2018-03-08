@@ -115,7 +115,7 @@
                     <af:button text="Back" id="b1" action="backToPaymentProfiles"/>
                     <!--<af:button text="New" id="b2" action="toNewProfileEntry"/>-->
                     <af:button text="New" id="b2" targetFrame="_blank"
-                               destination="https://morganfranklinlabs.us/CyberSourceFeedback-ViewController-context-root/tokenfeedback?customerId=#{bindings.CustId.inputValue}&amp;forename=Tomasz&amp;surname=Zarzycki&amp;email=tomasz.zarzycki@morganfranklin.com&amp;address1=#{bindings.Address1.inputValue}&amp;city=#{bindings.City.inputValue}&amp;postal=#{bindings.Postal.inputValue}&amp;state=#{bindings.State.inputValue}&amp;phone=2029040658"/>
+                               destination="http://awsmfdev01.cov.corp:7101/CovCyberSourceFeedback-ViewController-context-root/tokenfeedback?customerId=#{bindings.CustId.inputValue}&amp;forename=&amp;surname=#{bindings.Name1.inputValue}&amp;email=unknown&amp;address1=#{bindings.Address1.inputValue}&amp;city=#{bindings.City.inputValue}&amp;postal=#{bindings.Postal.inputValue}&amp;state=#{bindings.State.inputValue}&amp;phone=unknown"/>
                     <af:outputText value="#{bindings.CustomerId.inputValue}"
                                    shortDesc="#{bindings.CustomerId.hints.tooltip}" id="ot1"
                                    inlineStyle="color:White;"/>
