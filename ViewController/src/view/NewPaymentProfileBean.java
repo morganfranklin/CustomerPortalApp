@@ -85,6 +85,10 @@ public class NewPaymentProfileBean implements Serializable {
 
     public String getHtmlBodyForPaymentConfirmation() {
         String bodyText = "<h1>Transaction Receipt</h1>";
+        String custId = (String)ADFUtils.evaluateEL("#{bindings.CustId.inputValue}");
+        String custName = (String)ADFUtils.evaluateEL("#{bindings.Name1.inputValue}");
+        bodyText = bodyText + "<p><b>Customer ID:</b> " + custId +"</p>";
+        bodyText = bodyText + "<p><b>Customer Name:</b> " + custName +"</p>";
         bodyText = bodyText + " <p><img  src=\"cid:image\" ><b>Transaction Confirmation</b> </p>";
         bodyText =
             bodyText + " <p>Below transaction is completed successfully.Please note transaction ID for reference-</p>" +
@@ -715,7 +719,7 @@ public class NewPaymentProfileBean implements Serializable {
         DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
         ViewObject vo = itr.getViewObject();
         RowSetIterator rsi = vo.createRowSetIterator(null);
-        if (itr.getEstimatedRowCount() > 1) {
+        if (itr.getEstimatedRowCount() > 0) {
             while (rsi.hasNext()) {
                 OpenItemsRowImpl r = (OpenItemsRowImpl) rsi.next();
                 BigDecimal paymentAmount = (BigDecimal) r.getAttribute("paymentAmount");
@@ -726,6 +730,7 @@ public class NewPaymentProfileBean implements Serializable {
                 }
             }
         }
+        rsi.closeRowSetIterator();
         return true;
 
     }
