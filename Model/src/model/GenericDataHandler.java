@@ -4946,7 +4946,7 @@ public class GenericDataHandler implements Runnable
                     payAmount = new BigDecimal(array[0]);
                     if (payAmount.compareTo(BigDecimal.valueOf(0)) == -1){
                         entryUseId = "IT-01";
-                        entryType = "DR";
+                        entryType = "PY2";
                     }
                     dstIdAr = array[1];
                     dstIdAr = dstIdAr.replace("AR", "PY");
