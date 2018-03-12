@@ -4940,12 +4940,14 @@ public class GenericDataHandler implements Runnable
                 System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
                 String[] array  = entry.getValue().split(":");
                 BigDecimal payAmount = BigDecimal.ZERO;;
-                String dstIdAr=null,salesPerson=null,collector=null,entryUseId="IT-02";
+                String dstIdAr=null,salesPerson=null,collector=null,entryUseId="IT-02",entryType="PY";
                 
                 if (array.length > 0) {
                     payAmount = new BigDecimal(array[0]);
-                    if (payAmount.compareTo(BigDecimal.valueOf(0)) == -1)
+                    if (payAmount.compareTo(BigDecimal.valueOf(0)) == -1){
                         entryUseId = "IT-01";
+                        entryType = "DR";
+                    }
                     dstIdAr = array[1];
                     dstIdAr = dstIdAr.replace("AR", "PY");
 
@@ -4960,14 +4962,15 @@ public class GenericDataHandler implements Runnable
                              sqlStatement.setString( 2,  givenCustomer);        // customer id
                              sqlStatement.setString( 3,  entry.getKey());        // customer id
                              sqlStatement.setInt(    4,  itemSeqNum);                 // group seq num
-                             sqlStatement.setBigDecimal( 5,  new BigDecimal(payAmount.doubleValue()*(-1)));             // indiv amount
-                             sqlStatement.setString( 6,  salesPerson); 
-                             sqlStatement.setString( 7,  collector); 
-                             sqlStatement.setString( 8,  dstIdAr);             // DST_ID_AR
-                             sqlStatement.setString( 9,  entryUseId);  
-                             sqlStatement.setBigDecimal( 10,  new BigDecimal(payAmount.doubleValue()*(-1)));             // indiv amount
-                             sqlStatement.setBigDecimal( 11,  new BigDecimal(payAmount.doubleValue()*(-1))); 
+                             sqlStatement.setString(    5,  entryType);
+                             sqlStatement.setBigDecimal( 6,  new BigDecimal(payAmount.doubleValue()*(-1)));             // indiv amount
+                             sqlStatement.setString( 7,  salesPerson); 
+                             sqlStatement.setString( 8,  collector); 
+                             sqlStatement.setString( 9,  dstIdAr);             // DST_ID_AR
+                             sqlStatement.setString( 10,  entryUseId);  
+                             sqlStatement.setBigDecimal( 11,  new BigDecimal(payAmount.doubleValue()*(-1)));             // indiv amount
                              sqlStatement.setBigDecimal( 12,  new BigDecimal(payAmount.doubleValue()*(-1))); 
+                             sqlStatement.setBigDecimal( 13,  new BigDecimal(payAmount.doubleValue()*(-1))); 
                              totalPayments = totalPayments.add(payAmount);
 
                  sqlStatement.executeUpdate();
@@ -5236,7 +5239,7 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "?,"; // item
            localStatement = localStatement + "0,";
            localStatement = localStatement + "?,";  // group seq num
-           localStatement = localStatement + "'PY',";
+           localStatement = localStatement + "?,";
            localStatement = localStatement + "'PRTL',";
            localStatement = localStatement + "?,"; // indiv pay amt
            localStatement = localStatement + "' ',";
