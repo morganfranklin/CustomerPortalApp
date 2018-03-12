@@ -4940,11 +4940,12 @@ public class GenericDataHandler implements Runnable
                 System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
                 String[] array  = entry.getValue().split(":");
                 BigDecimal payAmount = BigDecimal.ZERO;;
-                String dstIdAr=null,salesPerson=null,collector=null;
+                String dstIdAr=null,salesPerson=null,collector=null,entryUseId="IT-02";
                 
                 if (array.length > 0) {
                     payAmount = new BigDecimal(array[0]);
-                    
+                    if (payAmount.compareTo(BigDecimal.valueOf(0)) == -1)
+                        entryUseId = "IT-01";
                     dstIdAr = array[1];
                     dstIdAr = dstIdAr.replace("AR", "PY");
 
@@ -4963,9 +4964,10 @@ public class GenericDataHandler implements Runnable
                              sqlStatement.setString( 6,  salesPerson); 
                              sqlStatement.setString( 7,  collector); 
                              sqlStatement.setString( 8,  dstIdAr);             // DST_ID_AR
-                             sqlStatement.setBigDecimal( 9,  new BigDecimal(payAmount.doubleValue()*(-1)));             // indiv amount
-                             sqlStatement.setBigDecimal( 10,  new BigDecimal(payAmount.doubleValue()*(-1))); 
+                             sqlStatement.setString( 9,  entryUseId);  
+                             sqlStatement.setBigDecimal( 10,  new BigDecimal(payAmount.doubleValue()*(-1)));             // indiv amount
                              sqlStatement.setBigDecimal( 11,  new BigDecimal(payAmount.doubleValue()*(-1))); 
+                             sqlStatement.setBigDecimal( 12,  new BigDecimal(payAmount.doubleValue()*(-1))); 
                              totalPayments = totalPayments.add(payAmount);
 
                  sqlStatement.executeUpdate();
@@ -5272,7 +5274,7 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "0.00,";
            localStatement = localStatement + "'N',";
            localStatement = localStatement + "' ',";
-           localStatement = localStatement + "'IT-02',";
+           localStatement = localStatement + "?,";
            localStatement = localStatement + "'O',";
            localStatement = localStatement + "' ',";
            localStatement = localStatement + "NULL,";

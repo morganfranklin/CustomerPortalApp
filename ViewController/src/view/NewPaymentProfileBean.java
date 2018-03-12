@@ -34,7 +34,6 @@ import oracle.adfinternal.view.faces.model.binding.FacesCtrlHierNodeBinding;
 
 import oracle.binding.BindingContainer;
 
-import oracle.jbo.Key;
 import oracle.jbo.Row;
 import oracle.jbo.RowSetIterator;
 import oracle.jbo.SortCriteria;
@@ -91,7 +90,7 @@ public class NewPaymentProfileBean implements Serializable {
         bodyText = bodyText + "<p><b>Customer Name:</b> " + custName +"</p>";
         bodyText = bodyText + " <p><img  src=\"cid:image\" ><b>Transaction Confirmation</b> </p>";
         bodyText =
-            bodyText + " <p>Below transaction is completed successfully.Please note transaction ID for reference-</p>" +
+            bodyText + " <p>The payment below has processed successfully.  Please note the transaction id below for reference.</p>" +
             this.myPaymentProfileBean.getTransactionRequestId();
         bodyText =
             bodyText + " <table cellpadding=\"10\" cellspacing=\"1\">\n" + "  <tr>\n" +
@@ -445,9 +444,10 @@ public class NewPaymentProfileBean implements Serializable {
         if (myPaymentProfileBean.getTotalPaymentAmount().compareTo(BigDecimal.valueOf(0)) == 1) {
             BigDecimal totalAmountTemp = new BigDecimal(myPaymentProfileBean.getTotalPaymentAmount().toString());
             DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
+            Row row = itr.getCurrentRow();
             resetTableSort(invoiceTableBinding, OPEN_ITEMS_ITERATOR);
+            clearAllPaymentAmount();
             ViewObject vo = itr.getViewObject();
-            vo.executeQuery();
             RowSetIterator rsi = vo.createRowSetIterator(null);
             rsi.reset();
             while (rsi.hasNext()) {
@@ -473,6 +473,8 @@ public class NewPaymentProfileBean implements Serializable {
                 r.setpaymentAmount(r.getBalAmt().add(totalAmountTemp));
             }
             rsi.closeRowSetIterator();
+            if(null!=row)
+                vo.setCurrentRow(row);
             AdfFacesContext.getCurrentInstance().addPartialTarget(invoiceTableBinding);
         }
     }
@@ -553,6 +555,7 @@ public class NewPaymentProfileBean implements Serializable {
             row.setpaymentAmount(null);
             row.setselected(false);
         }
+        rsi.closeRowSetIterator();
         myPaymentProfileBean.setSelectAll(false);
     }
 
@@ -701,17 +704,17 @@ public class NewPaymentProfileBean implements Serializable {
 
         tableComponent.queueEvent(new SortEvent(tableComponent, SortEvent.SortType.COLUMN,
                                                 new HashMap<String, Object>()));
-        Key currentRow = null;
+        /*Key currentRow = null;
         Row row = iter.getCurrentRow();
         if (row != null) {
             currentRow = row.getKey();
-        }
+        }*/
         oracle.jbo.SortCriteria[] sc = new SortCriteria[0];
         iter.applySortCriteria(sc);
         iter.executeQuery();
-        if (currentRow != null) {
+        /*if (currentRow != null) {
             iter.setCurrentRowWithKey(currentRow.toStringFormat(true));
-        }
+        }*/
     }
 
     private Boolean checkIfNoInvoiceSelected() {
