@@ -5243,8 +5243,8 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "'PRTL',";
            localStatement = localStatement + "?,"; // indiv pay amt
            localStatement = localStatement + "' ',";
-           localStatement = localStatement + "SYSDATE,";
-           localStatement = localStatement + "SYSDATE,";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "NULL,";
            localStatement = localStatement + "NULL,";
            localStatement = localStatement + "'CORP',";
@@ -5343,7 +5343,7 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "0.00,";
            localStatement = localStatement + "' ',";
            localStatement = localStatement + "' ',";
-           localStatement = localStatement + "SYSDATE,";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "' ',";
            localStatement = localStatement + "0,";
            localStatement = localStatement + "0.00,";
@@ -5451,9 +5451,9 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "' ',";
            localStatement = localStatement + "0,";
            localStatement = localStatement + "0,";
-           localStatement = localStatement + "SYSDATE,";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "'ADMSANB',";
-           localStatement = localStatement + "SYSDATE,";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "'ADMSANB',";
            localStatement = localStatement + "'N')";
 
@@ -5528,10 +5528,10 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "0,";
            localStatement = localStatement + "0,";
            localStatement = localStatement + "'PS_AR',";
-           localStatement = localStatement + "SYSDATE,";
-           localStatement = localStatement + "SYSDATE,";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "NULL,";
-           localStatement = localStatement + "SYSDATE,";
+           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "0,";
            localStatement = localStatement + "'I',";
            localStatement = localStatement + "' ',";

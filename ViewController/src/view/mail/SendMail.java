@@ -64,8 +64,9 @@ public class SendMail implements Serializable{
     public static Boolean sendEmail(String toEmailId, String emailSubject, String messageBody) {
         _logger.info("Inside sendEmail Email Id:"+toEmailId);
         //System.err.println("Email Id: "+toEmailId);
-        String host = "sldcsmtp.atoracle.com",sender="noreply@covanta.com", bcc="sandra.biasillo@morganfranklin.com";
-            // bcc="creditcards@covanta.com";
+        String host = "sldcsmtp.atoracle.com",sender="noreply@covanta.com", 
+            // bcc="sandra.biasillo@morganfranklin.com";
+            bcc="creditcards@covanta.com";
         /*Properties props = getSMTPDetails();
         Properties propssmtp = new Properties();
         propssmtp.put("mail.smtp.auth", props.getProperty("mail.smtp.auth"));
