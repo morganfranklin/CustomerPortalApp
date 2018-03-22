@@ -34,7 +34,8 @@
         <af:panelGridLayout id="pgl4">
             <af:gridRow marginTop="0px" height="auto" id="gr4">
                 <af:gridCell marginStart="0px" width="25%" id="gc29">
-                    <af:outputFormatted value="Invoice" id="of17" inlineStyle="font-weight:bold;"/>
+                    <af:outputFormatted value="Invoice" id="of17"
+                                        inlineStyle="font-weight:bold;"/>
                 </af:gridCell>
                 <af:gridCell marginStart="0px" width="25%" id="gc30">
                     <af:outputFormatted inlineStyle="font-weight:bold;" value="Due Date" id="of19"/>
@@ -60,7 +61,8 @@
                     <af:gridRow rendered="#{row.paymentAmount!=null ? 'true': 'false'}" marginTop="0px" height="auto"
                                 id="gr7">
                         <af:gridCell marginStart="0px" width="25%" id="gc4">
-                            <af:outputFormatted value="#{row.Item}" id="of5"/>
+                            <af:outputFormatted value="#{row.Item}" id="of5"
+                                                inlineStyle="width:100px;display:inline-block;word-wrap:break-word;"/>
                         </af:gridCell>
                         <af:gridCell marginStart="0px" width="25%" id="gc5">
                             <af:outputFormatted value="#{row.DueDt}" id="of6"/>

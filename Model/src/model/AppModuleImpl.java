@@ -118,7 +118,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
         salesPersonROVO.executeQuery();
         SalesPersonROVORowImpl salesPersonROVORow = (SalesPersonROVORowImpl)salesPersonROVO.first();
         if(null!=salesPersonROVORow)
-            salesPerson = salesPersonROVORow.getSupportTeamCd();
+            salesPerson = salesPersonROVORow.getSupportTeamMbr();
         return salesPerson;
     }
     

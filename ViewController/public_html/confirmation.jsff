@@ -172,7 +172,7 @@
         <af:button text="Return to Home" action="toHome"
                    actionListener="#{backingBeanScope.NewPaymentProfileBean.returnToHomeActionListener}"></af:button>
         <af:button actionListener="#{backingBeanScope.NewPaymentProfileBean.returnToInvoiceList}"
-                   text="Return to Previous Page" action="toInvoiceList"></af:button>
+                   text="Return to Previous Page" action="toInvoiceList" rendered="false"></af:button>
     </af:panelBox>
 </ui:composition>
  

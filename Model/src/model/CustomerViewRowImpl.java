@@ -1,5 +1,7 @@
 package model;
 
+import java.math.BigInteger;
+
 import oracle.jbo.RowIterator;
 import oracle.jbo.RowSet;
 import oracle.jbo.server.ViewRowImpl;
@@ -25,6 +27,7 @@ public class CustomerViewRowImpl extends ViewRowImpl {
         Num1,
         State,
         Postal,
+        AddressSeqNum,
         PaymentProfileViewObject,
         OpenItems,
         LovMonths1,
@@ -64,6 +67,7 @@ public class CustomerViewRowImpl extends ViewRowImpl {
     public static final int NUM1 = AttributesEnum.Num1.index();
     public static final int STATE = AttributesEnum.State.index();
     public static final int POSTAL = AttributesEnum.Postal.index();
+    public static final int ADDRESSSEQNUM = AttributesEnum.AddressSeqNum.index();
     public static final int PAYMENTPROFILEVIEWOBJECT = AttributesEnum.PaymentProfileViewObject.index();
     public static final int OPENITEMS = AttributesEnum.OpenItems.index();
     public static final int LOVMONTHS1 = AttributesEnum.LovMonths1.index();
@@ -162,6 +166,14 @@ public class CustomerViewRowImpl extends ViewRowImpl {
      */
     public String getPostal() {
         return (String) getAttributeInternal(POSTAL);
+    }
+
+    /**
+     * Gets the attribute value for the calculated attribute AddressSeqNum.
+     * @return the AddressSeqNum
+     */
+    public BigInteger getAddressSeqNum() {
+        return (BigInteger) getAttributeInternal(ADDRESSSEQNUM);
     }
 
     /**

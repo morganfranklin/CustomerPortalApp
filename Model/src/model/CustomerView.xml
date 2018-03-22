@@ -4,7 +4,7 @@
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
   Name="CustomerView"
-    Version="12.2.1.0.31"
+    Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
   CustomQuery="true"
@@ -49,16 +49,17 @@
         <DisplayCriteria
           Hint="showAndExecute"/>
     </ListBinding>
-    <SQLQuery><![CDATA[SELECT A.SETID, A.CUST_ID, A.NAME1, B.DESCR, C.COUNTRY, C.ADDRESS1, C.ADDRESS2,      
-C.CITY, C.NUM1,C.State,C.postal FROM PS_CUSTOMER A, PS_CUST_ADDR_SEQ B,      
-PS_CUST_ADDRESS C      
-WHERE A.SETID='MASTR'      
-AND A.SETID=B.SETID      
-AND A.CUST_ID=B.CUST_ID      
-AND B.BILL_TO_ADDR='Y'      
-AND B.SETID=C.SETID      
-AND B.CUST_ID=C.CUST_ID      
-AND B.ADDRESS_SEQ_NUM=C.ADDRESS_SEQ_NUM      
+    <SQLQuery><![CDATA[SELECT A.SETID, A.CUST_ID, A.NAME1, B.DESCR, C.COUNTRY, C.ADDRESS1, C.ADDRESS2,       
+C.CITY, C.NUM1,C.State,C.postal,B.ADDRESS_SEQ_NUM  
+FROM PS_CUSTOMER A, PS_CUST_ADDR_SEQ B,       
+PS_CUST_ADDRESS C       
+WHERE A.SETID='MASTR'       
+AND A.SETID=B.SETID       
+AND A.CUST_ID=B.CUST_ID       
+AND B.BILL_TO_ADDR='Y'       
+AND B.SETID=C.SETID       
+AND B.CUST_ID=C.CUST_ID       
+AND B.ADDRESS_SEQ_NUM=C.ADDRESS_SEQ_NUM       
 AND C.LANGUAGE_CD='ENG']]></SQLQuery>
     <ViewAttribute
       Name="Setid"
@@ -284,10 +285,22 @@ AND C.LANGUAGE_CD='ENG']]></SQLQuery>
             <Attr Name="_DisplaySize" Value="12"/>
         </DesignTime>
     </ViewAttribute>
+    <ViewAttribute
+        Name="AddressSeqNum"
+        IsUpdateable="false"
+        IsPersistent="false"
+        PrecisionRule="true"
+        Precision="38"
+        Scale="0"
+        Type="java.math.BigInteger"
+        ColumnType="NUMBER"
+        AliasName="ADDRESS_SEQ_NUM"
+        Expression="ADDRESS_SEQ_NUM"
+        SQLType="NUMERIC"/>
     <AttrArray Name="KeyAttributes">
-        <Item Value="Setid"/>
         <Item Value="CustId"/>
         <Item Value="Postal"/>
+        <Item Value="AddressSeqNum"/>
     </AttrArray>
     <ViewLinkAccessor
       Name="PaymentProfileViewObject"

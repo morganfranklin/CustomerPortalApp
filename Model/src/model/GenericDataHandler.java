@@ -44,7 +44,7 @@ public class GenericDataHandler implements Runnable
     // local
     //private static final String propertyFileCfg = "C:\\JDeveloper\\mywork\\CovCustomerPortal010_2132018\\CovCustomerPortal010\\xpe_aws.properties";
     // omcs
-    private static final String propertyFileCfg = "/autofs/ood_implementation/lib4wls/xpe_batch/xpe_dcvaek.properties";
+    private static final String propertyFileCfg = "/autofs/ood_implementation/lib4wls/xpe_batch/xpe_aws.properties";
     //private static final String propertyFileCfg = "/autofs/ood_implementation/lib4wls/xpe_batch/xpe_aws.properties";
     private static final String userIdSelected = "demo";
 

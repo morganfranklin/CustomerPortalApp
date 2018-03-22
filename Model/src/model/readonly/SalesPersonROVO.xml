@@ -26,26 +26,43 @@
     Name="bind_CustId"
     Kind="where"
     Type="java.lang.String"/>
-  <SQLQuery><![CDATA[SELECT A.SUPPORT_TEAM_CD, A.CUST_ID  
-  FROM PS_CUST_TEAM A, PS_CUSTOMER B     
-  WHERE ( A.SETID = B.SETID     
-     AND A.CUST_ID = B.CUST_ID     
-         AND A.SETID = 'MASTR'    
- AND A.DEFAULT_FLAG = 'Y'    
-AND A.CUST_ID =:bind_CustId )]]></SQLQuery>
+  <SQLQuery><![CDATA[SELECT   
+    C.SUPPORT_TEAM_MBR,  
+    A.CUST_ID    
+FROM   
+PS_CUST_TEAM A, PS_TEAM_CODE_TBL B, PS_TEAM_MEMBERS C   
+WHERE   
+( A.SETID = B.SETID   
+AND A.SUPPORT_TEAM_CD = B.SUPPORT_TEAM_CD   
+AND B.EFFDT =   
+(SELECT MAX(B_ED.EFFDT)   
+	FROM PS_TEAM_CODE_TBL B_ED   
+	WHERE B.SETID = B_ED.SETID   
+	AND B.SUPPORT_TEAM_CD = B_ED.SUPPORT_TEAM_CD   
+	AND B_ED.EFFDT <= SYSDATE)   
+AND B.SETID = C.SETID   
+AND B.SUPPORT_TEAM_CD = C.SUPPORT_TEAM_CD   
+AND C.EFFDT =   
+(SELECT MAX(C_ED.EFFDT)   
+	FROM PS_TEAM_MEMBERS C_ED   
+	WHERE C.SETID = C_ED.SETID   
+	AND C.SUPPORT_TEAM_CD = C_ED.SUPPORT_TEAM_CD   
+	AND C_ED.EFFDT <= SYSDATE)   
+AND A.SETID = 'MASTR'   
+AND A.CUST_ID = :bind_CustId)]]></SQLQuery>
   <ViewAttribute
-    Name="SupportTeamCd"
+    Name="SupportTeamMbr"
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Precision="255"
+    Precision="8"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    AliasName="SUPPORT_TEAM_CD"
-    Expression="SUPPORT_TEAM_CD"
+    AliasName="SUPPORT_TEAM_MBR"
+    Expression="SUPPORT_TEAM_MBR"
     SQLType="VARCHAR">
     <DesignTime>
-      <Attr Name="_DisplaySize" Value="6"/>
+      <Attr Name="_DisplaySize" Value="8"/>
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute

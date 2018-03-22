@@ -22,10 +22,12 @@
                                   rowBandingInterval="1" columnStretching="multiple" styleClass="AFStretchWidth"
                                   selectedRowKeys="#{bindings.CustomerView2.collectionModel.selectedRow}"
                                   selectionListener="#{bindings.CustomerView2.collectionModel.makeCurrent}"
-                                  rowSelection="single" fetchSize="#{bindings.CustomerView2.rangeSize}" id="resId1">
+                                  rowSelection="single" fetchSize="#{bindings.CustomerView2.rangeSize}" id="resId1"
+                                  contentDelivery="immediate">
                             <af:column headerText="Customer ID" id="resId1c1">
                                 <af:link text="#{row.CustId}" id="l1" action="toPaymentProfileNew"
-                                         actionListener="#{backingBeanScope.NewPaymentProfileBean.toPaymentProfileActionListener}"/>
+                                         actionListener="#{backingBeanScope.NewPaymentProfileBean.toPaymentProfileActionListener}"
+                                         partialSubmit="true"/>
                             </af:column>
                             <af:column headerText="Customer Name" id="resId1c2">
                                 <af:outputText value="#{row.Name1}"
@@ -48,7 +50,8 @@
                             </af:column>
                             <af:column id="c1" headerText="Open Items">
                                 <af:link text="See open items" id="l2" action="toOpenInvoices"
-                                         actionListener="#{backingBeanScope.NewPaymentProfileBean.toOpenInvoicesActionListener}"/>
+                                         actionListener="#{backingBeanScope.NewPaymentProfileBean.toOpenInvoicesActionListener}"
+                                         partialSubmit="true"/>
                             </af:column>
                         </af:table>
                     </af:panelGroupLayout>

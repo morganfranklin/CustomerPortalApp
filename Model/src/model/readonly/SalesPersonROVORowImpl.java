@@ -12,9 +12,10 @@ public class SalesPersonROVORowImpl extends ViewRowImpl {
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
     public enum AttributesEnum {
-        SupportTeamCd,
+        SupportTeamMbr,
         CustId;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -36,7 +37,9 @@ public class SalesPersonROVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
-    public static final int SUPPORTTEAMCD = AttributesEnum.SupportTeamCd.index();
+
+
+    public static final int SUPPORTTEAMMBR = AttributesEnum.SupportTeamMbr.index();
     public static final int CUSTID = AttributesEnum.CustId.index();
 
     /**
@@ -45,12 +48,13 @@ public class SalesPersonROVORowImpl extends ViewRowImpl {
     public SalesPersonROVORowImpl() {
     }
 
+
     /**
-     * Gets the attribute value for the calculated attribute SupportTeamCd.
-     * @return the SupportTeamCd
+     * Gets the attribute value for the calculated attribute SupportTeamMbr.
+     * @return the SupportTeamMbr
      */
-    public String getSupportTeamCd() {
-        return (String) getAttributeInternal(SUPPORTTEAMCD);
+    public String getSupportTeamMbr() {
+        return (String) getAttributeInternal(SUPPORTTEAMMBR);
     }
 
     /**

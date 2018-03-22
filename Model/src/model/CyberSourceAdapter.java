@@ -36,7 +36,7 @@ public class CyberSourceAdapter {
   // local
   //private static final String propertyFileCybs = "C:\\JDeveloper\\mywork\\CovCustomerPortal010_2132018\\CovCustomerPortal010\\cybs.properties";
   // omcs
-  private static final String propertyFileCybs = "/tcva3t/shared/config/domains/ohsdomain/servers/AdminServer/logs/cyber/cybs.properties";
+  private static final String propertyFileCybs = "/dcva3t/shared/config/domains/ohsdomain/servers/AdminServer/logs/cyber/cybs.properties";
   //private static final String propertyFileCybs = "/autofs/ood_implementation/lib4wls/xpe_batch/cybs.properties";
 
     private static void displayMap(String header, Map map) {
