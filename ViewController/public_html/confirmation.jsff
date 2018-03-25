@@ -39,7 +39,7 @@
                                 rendered="#{backingBeanScope.NewPaymentProfileBean.myPaymentProfileBean.paymentSuccess}"
                                 id="m1"></af:message>
                     <af:message messageType="error"
-                                message="The below transaction has failed. Please correct the error and try again."
+                                message="#{pageFlowScope.transactionMessage}"
                                 rendered="#{!backingBeanScope.NewPaymentProfileBean.myPaymentProfileBean.paymentSuccess}"
                                 id="m2"></af:message>
                 </af:gridCell>

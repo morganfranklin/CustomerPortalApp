@@ -145,20 +145,32 @@ public class NewPaymentProfileBean implements Serializable {
             Map<String, String> replyMap = chargeCreditCardForAmount(myPaymentProfileBean.getTotalPaymentAmount(),
                                                                      "USD", 
                                                                      localProfileId);
-            if (replyMap != null && replyMap.get("decision").equalsIgnoreCase("ACCEPT") &&
-                replyMap.get("reasonCode").equals("100")) {
-                this.myPaymentProfileBean.setPaymentSuccess(Boolean.TRUE);
-                this.myPaymentProfileBean.setTransactionRequestId(replyMap.get("requestID").toString());
-                String bodyText = getHtmlBodyForPaymentConfirmation();
-                _logger.info("Inside callChargeCreditCard Before sendEmail Email Id:"+email);
-                SendMail.sendEmail(email, "Invoice Payment confirmation", bodyText);
-                
-                // 171115 begin
-                this.myPaymentProfileBean.savePendingItems();
-                // 171115 end
-                
+            if (replyMap != null) {
+                if (replyMap.get("DECISION").equalsIgnoreCase("ACCEPT") && replyMap.get("REASON_CODE").equals("100")) {
+                    this.myPaymentProfileBean.setPaymentSuccess(Boolean.TRUE);
+                    this.myPaymentProfileBean.setTransactionRequestId(replyMap.get("requestID").toString());
+                    String bodyText = getHtmlBodyForPaymentConfirmation();
+                    _logger.info("Inside callChargeCreditCard Before sendEmail Email Id:" + email);
+                    SendMail.sendEmail(email, "Invoice Payment confirmation", bodyText);
+
+                    // 171115 begin
+                    this.myPaymentProfileBean.savePendingItems();
+                    // 171115 end
+
+                } else {
+                    this.myPaymentProfileBean.setPaymentSuccess(Boolean.FALSE);
+                    if (null != replyMap.get("DECISION") && null != replyMap.get("REASON_CODE") &&
+                        null != replyMap.get("MESSAGE")) {
+                        ADFUtils.setvalueToExpression("#{pageFlowScope.transactionMessage}",
+                                                      replyMap.get("MESSAGE") + replyMap.get("REASON_CODE"));
+                    } else {
+                        ADFUtils.setvalueToExpression("#{pageFlowScope.transactionMessage}",
+                                                      "The below transaction has failed. Please correct the error and try again.");
+                    }
+                }
             } else {
                 this.myPaymentProfileBean.setPaymentSuccess(Boolean.FALSE);
+                ADFUtils.setvalueToExpression("#{pageFlowScope.transactionMessage}","The below transaction has failed. Please correct the error and try again.");
             }
         } else {
             ADFUtils.showErrorMessage("Please apply overpayment to open item. Overpayment is only allowed if customer does not have open items.");

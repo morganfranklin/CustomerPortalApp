@@ -351,14 +351,8 @@ Output : subscriptio_Id
 
             displayMap("REPLY:", replyMap);
             decision = replyMap.get("decision").toString();
-
-            if (decision.equals("ACCEPT")) {
-                requestID = replyMap.get("requestID").toString();
-                return replyMap;
-            } else {
-                return null;
-            }
-
+            
+            return processReply(replyMap);
 
         } //try
         catch (ClientException e) {
@@ -456,6 +450,40 @@ Output : subscriptio_Id
 
         Map<String, String> replyMap = chargeCustomer(createCusData);
         //System.out.println("requestID " + requestID);
+        return replyMap;
+    }
+    
+    private Map<String,String> processReply(Map<String, String> reply ) {
+        Map<String,String> replyMap = new HashMap<String,String>();
+        try {
+            replyMap = getTemplate(reply.get( "decision" ),reply.get( "reasonCode" ) );
+        } catch (Exception ex) {
+            // TODO: Add catch code
+            ex.printStackTrace();
+        } finally {
+            return replyMap;
+        }
+        //return template.format( content );
+        //System.out.println( template.format( content ) );
+    }
+
+    private Map<String, String> getTemplate(String decision, String reasonCode) {
+        Map<String, String> replyMap = new HashMap<String, String>();
+        // Retrieves the text that corresponds to the decision.
+        if ("ACCEPT".equalsIgnoreCase(decision)) {
+            replyMap.put("DECISION", decision);
+            replyMap.put("REASON_CODE", reasonCode);
+            replyMap.put("MESSAGE", "The transaction was approved. Reason Code is " + reasonCode);
+        } else if ("REJECT".equalsIgnoreCase(decision)) {
+            replyMap.put("DECISION", decision);
+            replyMap.put("REASON_CODE", reasonCode);
+            replyMap.put("MESSAGE", "The transaction was rejected. Reason Code is " + reasonCode);
+        } else {
+            // ERROR
+            replyMap.put("DECISION", decision);
+            replyMap.put("REASON_CODE", reasonCode);
+            replyMap.put("MESSAGE", "The transaction was errored. Reason Code is " + reasonCode);
+        }
         return replyMap;
     }
 
