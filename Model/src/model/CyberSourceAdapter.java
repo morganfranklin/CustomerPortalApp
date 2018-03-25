@@ -350,7 +350,7 @@ Output : subscriptio_Id
             Map<String, String> replyMap = Client.runTransaction(request, props);
 
             displayMap("REPLY:", replyMap);
-            decision = replyMap.get("decision").toString();
+            //decision = replyMap.get("decision").toString();
             
             return processReply(replyMap);
 
@@ -456,7 +456,7 @@ Output : subscriptio_Id
     private Map<String,String> processReply(Map<String, String> reply ) {
         Map<String,String> replyMap = new HashMap<String,String>();
         try {
-            replyMap = getTemplate(reply.get( "decision" ),reply.get( "reasonCode" ) );
+            replyMap = getTemplate(reply.get( "decision" ),reply.get( "reasonCode" ),reply.get( "requestID" ) );
         } catch (Exception ex) {
             // TODO: Add catch code
             ex.printStackTrace();
@@ -467,12 +467,13 @@ Output : subscriptio_Id
         //System.out.println( template.format( content ) );
     }
 
-    private Map<String, String> getTemplate(String decision, String reasonCode) {
+    private Map<String, String> getTemplate(String decision, String reasonCode, String requestID) {
         Map<String, String> replyMap = new HashMap<String, String>();
         // Retrieves the text that corresponds to the decision.
         if ("ACCEPT".equalsIgnoreCase(decision)) {
             replyMap.put("DECISION", decision);
             replyMap.put("REASON_CODE", reasonCode);
+            replyMap.put("REQUEST_ID", requestID);
             replyMap.put("MESSAGE", "The transaction was approved. Reason Code is " + reasonCode);
         } else if ("REJECT".equalsIgnoreCase(decision)) {
             replyMap.put("DECISION", decision);

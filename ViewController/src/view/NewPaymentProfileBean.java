@@ -148,7 +148,7 @@ public class NewPaymentProfileBean implements Serializable {
             if (replyMap != null) {
                 if (replyMap.get("DECISION").equalsIgnoreCase("ACCEPT") && replyMap.get("REASON_CODE").equals("100")) {
                     this.myPaymentProfileBean.setPaymentSuccess(Boolean.TRUE);
-                    this.myPaymentProfileBean.setTransactionRequestId(replyMap.get("requestID").toString());
+                    this.myPaymentProfileBean.setTransactionRequestId(replyMap.get("REQUEST_ID").toString());
                     String bodyText = getHtmlBodyForPaymentConfirmation();
                     _logger.info("Inside callChargeCreditCard Before sendEmail Email Id:" + email);
                     SendMail.sendEmail(email, "Invoice Payment confirmation", bodyText);
