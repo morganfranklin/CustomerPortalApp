@@ -78,12 +78,12 @@ public class PaymentProfile implements Serializable {
                 BigDecimal paymentAmount = (BigDecimal) r.getAttribute("paymentAmount");
                 String dstIdAr = (String) r.getAttribute("DstIdAr");
                 String salesPerson = (String) r.getAttribute("SalesPerson");
-                String collector = (String) r.getAttribute("Collector");
+                String collector = (String) r.getAttribute("Collector");    
                 
                 if (paymentAmount != null) {
 
                     // 17115                     
-                    pendingItemArray.put((String) r.getAttribute("Item"), paymentAmount+":"+dstIdAr+":"+salesPerson+":"+collector);
+                    pendingItemArray.put((String) r.getAttribute("Item"), "OPEN_ITEM" + ":" +paymentAmount+":"+dstIdAr+":"+salesPerson+":"+collector);
                     customerId=(String) r.getAttribute("CustId");
                     total = total.add(paymentAmount);
                 }
@@ -94,7 +94,8 @@ public class PaymentProfile implements Serializable {
         }
             //For new item
             if(this.getNoInvoicesSelected()){
-                pendingItemArray.put(this.getPsPendingItemSeq(), this.totalPaymentAmount+":AR-12500"+":"+this.getNewItemSalesPerson()+":"+this.getNewItemCollector());
+                
+                pendingItemArray.put(this.getPsPendingItemSeq(), "ON_ACCOUNT" + ":" + this.totalPaymentAmount+":AR-12500"+":"+this.getNewItemSalesPerson()+":"+this.getNewItemCollector());
                 customerId = (String)ADFUtils.evaluateEL("#{bindings.CustId.inputValue}");
             }
         

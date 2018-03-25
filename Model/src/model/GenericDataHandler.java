@@ -4935,7 +4935,7 @@ public class GenericDataHandler implements Runnable
             System.out.println("skeleton2: "+statementSkeleton);
             
             sqlStatement = configdb.prepareStatement(statementSkeleton);
-            
+            String paymentType=null;
             for (Map.Entry<String, String> entry : pendingItemsList.entrySet()) {
                 System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
                 String[] array  = entry.getValue().split(":");
@@ -4943,17 +4943,19 @@ public class GenericDataHandler implements Runnable
                 String dstIdAr=null,salesPerson=null,collector=null,entryUseId="IT-02",entryType="PY";
                 
                 if (array.length > 0) {
-                    payAmount = new BigDecimal(array[0]);
+                    paymentType= array[0];
+                    
+                    payAmount = new BigDecimal(array[1]);
                     if (payAmount.compareTo(BigDecimal.valueOf(0)) == -1){
                         entryUseId = "IT-01";
                         entryType = "PY2";
                     }
-                    dstIdAr = array[1];
+                    dstIdAr = array[2];
                     dstIdAr = dstIdAr.replace("AR", "PY");
 
-                    salesPerson = array[2];
+                    salesPerson = array[3];
 
-                    collector = array[3];
+                    collector = array[4];
                 }
                  
                  itemSeqNum++;
@@ -4995,7 +4997,38 @@ public class GenericDataHandler implements Runnable
             sqlStatement.setBigDecimal( 7,   totalPayments   );           // total amount
             
             sqlStatement.executeUpdate();
-            // configdb.commit();
+            
+            statementSkeleton = this.formPSDepositControlSQL();
+            //System.out.println("skeleton1: "+statementSkeleton);
+            sqlStatement = configdb.prepareStatement(statementSkeleton);
+
+            // System.out.println(formPSDepositControlSQL());
+            
+            sqlStatement.setLong( 1,   groupControlId);     // group id
+            sqlStatement.setBigDecimal( 2,   totalPayments  );           // to    tal amount
+            sqlStatement.setInt(    3,   itemSeqNum);               // total count
+            sqlStatement.setBigDecimal( 4,   totalPayments   );           // total amount
+            sqlStatement.setInt(    5,   itemSeqNum);               // total count
+            
+            sqlStatement.executeUpdate();
+            
+            
+            statementSkeleton = this.formPSPaymentSQL();
+            //System.out.println("skeleton1: "+statementSkeleton);
+            sqlStatement = configdb.prepareStatement(statementSkeleton);
+
+            // System.out.println(formPSPaymentSQL());
+            
+            sqlStatement.setLong( 1,   groupControlId);     // group id
+            sqlStatement.setBigDecimal( 2,   totalPayments  );           // to    tal amount
+            sqlStatement.setString( 3, "C");           // payment status
+            sqlStatement.setBigDecimal(4, null!=paymentType && "OPEN_ITEM".equals(paymentType)?totalPayments:new BigDecimal(0.00));              
+            sqlStatement.setBigDecimal(5, null!=paymentType && "ON_ACCOUNT".equals(paymentType)?totalPayments:new BigDecimal(0.00));        
+            sqlStatement.setInt(6,   itemSeqNum);               // total count
+            sqlStatement.setLong( 7,   groupControlId);     // group id
+            sqlStatement.setString( 8,   givenCustomer  );           // Customer Id
+            
+            sqlStatement.executeUpdate();
             
         } catch (SQLException e) {
             e.printStackTrace();          
@@ -5559,6 +5592,326 @@ public class GenericDataHandler implements Runnable
            return localStatement;
            
        }
+       
+    private String formPSDepositControlSQL() {
+        
+        String localStatement = "";
+        
+        localStatement = localStatement + "INSERT INTO SYSADM.PS_DEPOSIT_CONTROL (DEPOSIT_BU,";
+        localStatement = localStatement + "DEPOSIT_ID,";
+        localStatement = localStatement + "OPRID,";
+        localStatement = localStatement + "ASSN_OPRID,";
+        localStatement = localStatement + "BUSINESS_UNIT,";
+        localStatement = localStatement + "DEPOSIT_TYPE,";
+        localStatement = localStatement + "BANK_SETID,";
+        localStatement = localStatement + "BANK_CD,";
+        localStatement = localStatement + "BNK_ID_NBR,";
+        localStatement = localStatement + "BANK_ACCT_KEY,";
+        localStatement = localStatement + "BANK_ACCOUNT_NUM,";
+        localStatement = localStatement + "BAL_STATUS,";
+        localStatement = localStatement + "DEP_POST_STATUS,";
+        localStatement = localStatement + "CONTROL_AMT,";
+        localStatement = localStatement + "CONTROL_CNT,";
+        localStatement = localStatement + "ENTERED_AMT,";
+        localStatement = localStatement + "ENTERED_CNT,";
+        localStatement = localStatement + "POSTED_TOTAL,";
+        localStatement = localStatement + "POSTED_COUNT,";
+        localStatement = localStatement + "MISC_DST_TOTAL,";
+        localStatement = localStatement + "MISC_DST_COUNT,";
+        localStatement = localStatement + "GROUP_SEQ_NUM,";
+        localStatement = localStatement + "RECEIVED_DT,";
+        localStatement = localStatement + "ENTRY_DT,";
+        localStatement = localStatement + "POST_DT,";
+        localStatement = localStatement + "ACCOUNTING_DT,";
+        localStatement = localStatement + "GL_DISTRIB_STATUS,";
+        localStatement = localStatement + "DEPOSIT_STATUS,";
+        localStatement = localStatement + "LB_FORMAT_ERROR,";
+        localStatement = localStatement + "LOCKBOX_BATCH_ID,";
+        localStatement = localStatement + "LOCKBOX_RUN_ID,";
+        localStatement = localStatement + "CONTROL_CURRENCY,";
+        localStatement = localStatement + "FORMAT_CURRENCY,";
+        localStatement = localStatement + "PYMT_RT_TYPE,";
+        localStatement = localStatement + "PYMT_RATE_MULT,";
+        localStatement = localStatement + "PYMT_RATE_DIV,";
+        localStatement = localStatement + "PROCESS_INSTANCE,";
+        localStatement = localStatement + "RECON_TYPE,";
+        localStatement = localStatement + "RECONCILE_DT,";
+        localStatement = localStatement + "RECON_STATUS,";
+        localStatement = localStatement + "RECON_CYCLE_NBR,";
+        localStatement = localStatement + "RECONCILE_OPRID,";
+        localStatement = localStatement + "STTLMNT_DT_ACTUAL,";
+        localStatement = localStatement + "CASH_CNTRL,";
+        localStatement = localStatement + "BANK_ACCT_RVL_AMT,";
+        localStatement = localStatement + "ITEM_IN_EXCLUSION,";
+        localStatement = localStatement + "EXCLUDE_COLLECTION,";
+        localStatement = localStatement + "EXCLUDE_DEDUCTIONS,";
+        localStatement = localStatement + "EXCLUDE_DISPUTES,";
+        localStatement = localStatement + "RECON_RUN_ID,";
+        localStatement = localStatement + "PAY_WS_TYPE,";
+        localStatement = localStatement + "RECORD_SEQ_NUMBER) VALUES (";     
+        localStatement = localStatement + "'COVCP',";
+        localStatement = localStatement + "?,";  // group id
+        localStatement = localStatement + "'COVBATCH',";
+        localStatement = localStatement + "'COVBATCH',";
+        localStatement = localStatement + "'COVCP',";
+        localStatement = localStatement + "'D',";
+        localStatement = localStatement + "'MASTR',";
+        localStatement = localStatement + "'JPM',";
+        localStatement = localStatement + "'071000013',";
+        localStatement = localStatement + "'CECC',";
+        localStatement = localStatement + "'657588781',";
+        localStatement = localStatement + "'I',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "?,"; //TOTAL PAYMENT AMOUNT
+        localStatement = localStatement + "?,"; //TOTAL # OF ITEMS PAID
+        localStatement = localStatement + "?,"; //TOTAL PAYMENT AMOUNT
+        localStatement = localStatement + "?,"; //TOTAL # OF ITEMS PAID
+        localStatement = localStatement + "0.00,";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "0.00,";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "1,";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'C',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'USD',";
+        localStatement = localStatement + "'CRRNT',";
+        localStatement = localStatement + "1.00000000,";
+        localStatement = localStatement + "1.00000000,";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "'U',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "'UNR',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "0.00,";
+        localStatement = localStatement + "'A',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'C',";
+        localStatement = localStatement + "0)";
+
+        return localStatement;
+        
+    }
+    
+    private String formPSPaymentSQL() {
+        
+        String localStatement = "";
+        
+        localStatement = localStatement + "INSERT INTO SYSADM.PS_PAYMENT (DEPOSIT_BU,";
+        localStatement = localStatement + "DEPOSIT_ID,";
+        localStatement = localStatement + "PAYMENT_SEQ_NUM,";
+        localStatement = localStatement + "PAYMENT_ID,";
+        localStatement = localStatement + "PAYMENT_AMT,";
+        localStatement = localStatement + "PAYMENT_STATUS,";
+        localStatement = localStatement + "AR_WOAPPR_STATUS,";
+        localStatement = localStatement + "PAYMENT_METHOD,";
+        localStatement = localStatement + "ENTRY_DT,";
+        localStatement = localStatement + "ACCOUNTING_DT,";
+        localStatement = localStatement + "POST_DT,";
+        localStatement = localStatement + "SEL_CUST_ID,";
+        localStatement = localStatement + "SEL_PO,";
+        localStatement = localStatement + "SEL_REMIT,";
+        localStatement = localStatement + "SEL_CORP_ACCT,";
+        localStatement = localStatement + "SEL_MICR,";
+        localStatement = localStatement + "SEL_OPEN_ITEM,";
+        localStatement = localStatement + "SEL_DOCUMENT,";
+        localStatement = localStatement + "SEL_REF_RANGE,";
+        localStatement = localStatement + "ID_SEQ_CUST,";
+        localStatement = localStatement + "ID_SEQ_ITEM,";
+        localStatement = localStatement + "AMT_SEL,";
+        localStatement = localStatement + "AMT_ADJ,";
+        localStatement = localStatement + "AMT_REM,";
+        localStatement = localStatement + "DISC_TAKEN,";
+        localStatement = localStatement + "DISC_EARNED,";
+        localStatement = localStatement + "DISC_UNEARNED,";
+        localStatement = localStatement + "WS_COUNT,";
+        localStatement = localStatement + "WS_DTTM,";
+        localStatement = localStatement + "WS_SEQ_ITEM,";
+        localStatement = localStatement + "GL_DISTRIB_STATUS,";
+        localStatement = localStatement + "DST_DT,";
+        localStatement = localStatement + "JOURNAL_ID,";
+        localStatement = localStatement + "JOURNAL_DATE,";
+        localStatement = localStatement + "GROUP_ID,";
+        localStatement = localStatement + "PP_SW,";
+        localStatement = localStatement + "DISC_USED_SW,";
+        localStatement = localStatement + "WO_USED_SW,";
+        localStatement = localStatement + "WO_ITEM_AMT,";
+        localStatement = localStatement + "WO_ADJ_USED_SW,";
+        localStatement = localStatement + "WS_UPDATED_SW,";
+        localStatement = localStatement + "LOCKBOX_PYMNT_ID,";
+        localStatement = localStatement + "PP_METHOD,";
+        localStatement = localStatement + "ALGORITHM_GROUP,";
+        localStatement = localStatement + "WS_REF_MATCH_TYPE,";
+        localStatement = localStatement + "ALGORITHM,";
+        localStatement = localStatement + "PAYMENT_CURRENCY,";
+        localStatement = localStatement + "PYMT_RT_TYPE,";
+        localStatement = localStatement + "PYMT_RATE_MULT,";
+        localStatement = localStatement + "PYMT_RATE_DIV,";
+        localStatement = localStatement + "CURRENCY_CD,";
+        localStatement = localStatement + "PP_STATUS,";
+        localStatement = localStatement + "PP_RQ,";
+        localStatement = localStatement + "PP_RQ_HIT,";
+        localStatement = localStatement + "APPLIED_OPRID,";
+        localStatement = localStatement + "MISC_PAYMENT,";
+        localStatement = localStatement + "MISC_DST_BAL,";
+        localStatement = localStatement + "CREATE_PEND_ITEMS,";
+        localStatement = localStatement + "PROCESS_INSTANCE,";
+        localStatement = localStatement + "CASH_CNTRL_USE,";
+        localStatement = localStatement + "REF_LEVEL,";
+        localStatement = localStatement + "BANK_ACCOUNT_NUM,";
+        localStatement = localStatement + "BNK_ID_NBR,";
+        localStatement = localStatement + "RECONCILE_DT,";
+        localStatement = localStatement + "RECONCILE_OPRID,";
+        localStatement = localStatement + "RECON_CYCLE_NBR,";
+        localStatement = localStatement + "RECON_STATUS,";
+        localStatement = localStatement + "RECON_TYPE,";
+        localStatement = localStatement + "STTLMNT_DT_ACTUAL,";
+        localStatement = localStatement + "STTLMNT_DT_EST,";
+        localStatement = localStatement + "DOC_TYPE,";
+        localStatement = localStatement + "DOC_SEQ_NBR,";
+        localStatement = localStatement + "DOC_SEQ_DATE,";
+        localStatement = localStatement + "DOC_SEQ_STATUS,";
+        localStatement = localStatement + "CASH_CNTRL_DONE,";
+        localStatement = localStatement + "DATA_SOURCE,";
+        localStatement = localStatement + "UNPOST_REASON,";
+        localStatement = localStatement + "BUSINESS_UNIT_GL,";
+        localStatement = localStatement + "REMIT_FROM_SETID,";
+        localStatement = localStatement + "REMIT_FROM_CUST_ID,";
+        localStatement = localStatement + "EDI_TRACE_NBR,";
+        localStatement = localStatement + "CC_AFFECTED,";
+        localStatement = localStatement + "BUDGET_HDR_STATUS,";
+        localStatement = localStatement + "KK_AMOUNT_TYPE,";
+        localStatement = localStatement + "KK_TRAN_OVER_DTTM,";
+        localStatement = localStatement + "KK_TRAN_OVER_FLAG,";
+        localStatement = localStatement + "KK_TRAN_OVER_OPRID,";
+        localStatement = localStatement + "BANK_ACCT_RVL_AMT,";
+        localStatement = localStatement + "ENTRY_EVENT,";
+        localStatement = localStatement + "OPRID_APPROVED_BY,";
+        localStatement = localStatement + "RECON_RUN_ID,";
+        localStatement = localStatement + "BILL_TO_CUST_ID,";
+        localStatement = localStatement + "RECORD_SEQ_NUMBER,";
+        //localStatement = localStatement + "REQ_WO_COMMENTS,";
+        localStatement = localStatement + "ENTERED_DTTM,";
+        localStatement = localStatement + "OPRID,";
+        localStatement = localStatement + "LAST_UPDATE_DTTM,";
+        localStatement = localStatement + "OPRID_LAST_UPDT,";
+        localStatement = localStatement + "AR_INBOUND_IPAC) VALUES (";       
+        localStatement = localStatement + "'COVCP',";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "1,";
+        localStatement = localStatement + "'CC1',";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "'I',";
+        localStatement = localStatement + "'CC',";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'Y',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "1,";
+        localStatement = localStatement + "1,";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "0.000,";
+        localStatement = localStatement + "0.000,";
+        localStatement = localStatement + "0.000,";
+        localStatement = localStatement + "0.000,";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "TO_TIMESTAMP(TO_CHAR(SYSTIMESTAMP,'DD-MON-RR HH:MI:SS.FF AM')),";
+        localStatement = localStatement + "3,";
+        localStatement = localStatement + "'G',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "0.00,";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'E',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'USD',";
+        localStatement = localStatement + "'CRRNT',";
+        localStatement = localStatement + "1.00000000,";
+        localStatement = localStatement + "1.00000000,";
+        localStatement = localStatement + "'USD',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "'ADMIN',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'A',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'D',";
+        localStatement = localStatement + "'657588781',";
+        localStatement = localStatement + "'071000013',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "'UNR',";
+        localStatement = localStatement + "'U',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "'ONL',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'N',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "0,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'COVBATCH',";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "?,";
+        localStatement = localStatement + "0,";
+        //localStatement = localStatement + "REQ_WO_COMMENTS,";
+        localStatement = localStatement + "TO_TIMESTAMP(TO_CHAR(SYSTIMESTAMP,'DD-MON-RR HH:MI:SS.FF AM')),";
+        localStatement = localStatement + "'COVBATCH',";
+        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'N')";
+
+        return localStatement;
+        
+    }
        
        
     public Map<String, String> getCybCustomerProfiles(ProjectVariable projShare, String givenCustomer){
