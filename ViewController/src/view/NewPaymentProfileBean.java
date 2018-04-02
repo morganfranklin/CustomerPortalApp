@@ -161,8 +161,7 @@ public class NewPaymentProfileBean implements Serializable {
                     this.myPaymentProfileBean.setPaymentSuccess(Boolean.FALSE);
                     if (null != replyMap.get("DECISION") && null != replyMap.get("REASON_CODE") &&
                         null != replyMap.get("MESSAGE")) {
-                        ADFUtils.setvalueToExpression("#{pageFlowScope.transactionMessage}",
-                                                      replyMap.get("MESSAGE") + replyMap.get("REASON_CODE"));
+                        ADFUtils.setvalueToExpression("#{pageFlowScope.transactionMessage}", replyMap.get("MESSAGE"));
                     } else {
                         ADFUtils.setvalueToExpression("#{pageFlowScope.transactionMessage}",
                                                       "The below transaction has failed. Please correct the error and try again.");
