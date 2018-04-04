@@ -5005,9 +5005,9 @@ public class GenericDataHandler implements Runnable
             // System.out.println(formPSDepositControlSQL());
             
             sqlStatement.setLong( 1,   groupControlId);     // group id
-            sqlStatement.setBigDecimal( 2,   totalPayments  );           // to    tal amount
+            sqlStatement.setBigDecimal( 2,   totalPayments.abs()  );           // to    tal amount
             sqlStatement.setInt(    3,   itemSeqNum);               // total count
-            sqlStatement.setBigDecimal( 4,   totalPayments   );           // total amount
+            sqlStatement.setBigDecimal( 4,   totalPayments.abs()   );           // total amount
             sqlStatement.setInt(    5,   itemSeqNum);               // total count
             
             sqlStatement.executeUpdate();
@@ -5020,9 +5020,9 @@ public class GenericDataHandler implements Runnable
             // System.out.println(formPSPaymentSQL());
             
             sqlStatement.setLong( 1,   groupControlId);     // group id
-            sqlStatement.setBigDecimal( 2,   totalPayments  );           // to    tal amount
+            sqlStatement.setBigDecimal( 2,   totalPayments.abs()  );           // to    tal amount
             sqlStatement.setString( 3, "C");           // payment status
-            sqlStatement.setBigDecimal(4, null!=paymentType && "OPEN_ITEM".equals(paymentType)?totalPayments:new BigDecimal(0.00));              
+            sqlStatement.setBigDecimal(4, null!=paymentType && "OPEN_ITEM".equals(paymentType)?totalPayments.abs():new BigDecimal(0.00));              
             sqlStatement.setBigDecimal(5, null!=paymentType && "ON_ACCOUNT".equals(paymentType)?totalPayments:new BigDecimal(0.00));        
             sqlStatement.setInt(6,   itemSeqNum);               // total count
             sqlStatement.setLong( 7,   groupControlId);     // group id
@@ -5680,7 +5680,7 @@ public class GenericDataHandler implements Runnable
         localStatement = localStatement + "'N',";
         localStatement = localStatement + "' ',";
         localStatement = localStatement + "0,";
-        localStatement = localStatement + "' ',";
+        localStatement = localStatement + "'USD',";
         localStatement = localStatement + "'USD',";
         localStatement = localStatement + "'CRRNT',";
         localStatement = localStatement + "1.00000000,";
@@ -5819,7 +5819,7 @@ public class GenericDataHandler implements Runnable
         localStatement = localStatement + "'CC',";
         localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
         localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
-        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
         localStatement = localStatement + "'N',";
         localStatement = localStatement + "'N',";
         localStatement = localStatement + "'N',";
@@ -5881,7 +5881,7 @@ public class GenericDataHandler implements Runnable
         localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
         localStatement = localStatement + "' ',";
         localStatement = localStatement + "' ',";
-        localStatement = localStatement + "NULL,";
+        localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
         localStatement = localStatement + "' ',";
         localStatement = localStatement + "'N',";
         localStatement = localStatement + "'ONL',";
@@ -5890,8 +5890,8 @@ public class GenericDataHandler implements Runnable
         localStatement = localStatement + "' ',";
         localStatement = localStatement + "' ',";
         localStatement = localStatement + "0,";
-        localStatement = localStatement + "' ',";
         localStatement = localStatement + "'N',";
+        localStatement = localStatement + "' ',";
         localStatement = localStatement + "' ',";
         localStatement = localStatement + "NULL,";
         localStatement = localStatement + "' ',";
