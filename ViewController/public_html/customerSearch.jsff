@@ -51,7 +51,7 @@
                             <af:column id="c1" headerText="Open Items">
                                 <af:link text="See open items" id="l2" action="toOpenInvoices"
                                          actionListener="#{backingBeanScope.NewPaymentProfileBean.toOpenInvoicesActionListener}"
-                                         partialSubmit="true"/>
+                                         partialSubmit="true" disabled="true"/>
                             </af:column>
                         </af:table>
                     </af:panelGroupLayout>

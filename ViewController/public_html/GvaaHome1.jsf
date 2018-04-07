@@ -71,7 +71,7 @@
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc10">
                                                 <af:link text="Invoices"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.paymentProfileNew}"
-                                                         id="l3"/>
+                                                         id="l3" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
@@ -88,21 +88,21 @@
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc81">
                                                 <af:link text="Summary aging"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.portalPayment}"
-                                                         id="l11"/>
+                                                         id="l11" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr91">
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc91">
                                                 <af:link text="Open Items"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.paymentProfiles}"
-                                                         id="l21"/>
+                                                         id="l21" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr101">
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc101">
                                                 <af:link text="Collector actions"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.paymentProfileNew}"
-                                                         id="l31"/>
+                                                         id="l31" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
@@ -119,21 +119,21 @@
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc82">
                                                 <af:link text="Contract types"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.portalPayment}"
-                                                         id="l12"/>
+                                                         id="l12" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr92">
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc92">
                                                 <af:link text="Integration"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.paymentProfiles}"
-                                                         id="l22"/>
+                                                         id="l22" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                         <af:gridRow marginTop="0px" height="auto" marginBottom="0px" id="gr103">
                                             <af:gridCell marginStart="0px" width="100%" marginEnd="0px" id="gc103">
                                                 <af:link text="Processing"
                                                          action="#{backingBeanScope.MainDynamicRegionBean.paymentProfileNew}"
-                                                         id="l33"/>
+                                                         id="l33" disabled="true"/>
                                             </af:gridCell>
                                         </af:gridRow>
                                     </af:panelGridLayout>
