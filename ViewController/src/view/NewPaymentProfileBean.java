@@ -671,13 +671,16 @@ public class NewPaymentProfileBean implements Serializable {
         FacesCtrlHierNodeBinding tableBinding = (FacesCtrlHierNodeBinding) invoiceTableBinding.getSelectedRowData();
         OpenItemsRowImpl row = (OpenItemsRowImpl) tableBinding.getRow();
         BigDecimal currnetRowBalanceAmount = row.getBalAmt();
-        BigDecimal currnetRowPaymentAmount = (BigDecimal) valueChangeEvent.getNewValue();
+        BigDecimal currnetRowPaymentAmount =
+            (null != valueChangeEvent.getNewValue() && valueChangeEvent.getNewValue().toString().trim().length() > 0) ?
+            (BigDecimal) valueChangeEvent.getNewValue() : null;
         String currentInvoice = row.getItem();
 
         DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
         ViewObject vo = itr.getViewObject();
         RowSetIterator rsi = vo.createRowSetIterator(null);
-        if (itr.getEstimatedRowCount() > 1 && currnetRowPaymentAmount.compareTo(currnetRowBalanceAmount) == 1) {
+        if (itr.getEstimatedRowCount() > 0 && null != currnetRowPaymentAmount &&
+            currnetRowPaymentAmount.compareTo(currnetRowBalanceAmount) == 1) {
             while (rsi.hasNext()) {
                 OpenItemsRowImpl r = (OpenItemsRowImpl) rsi.next();
                 if (!currentInvoice.equalsIgnoreCase(r.getItem())) {
@@ -691,6 +694,7 @@ public class NewPaymentProfileBean implements Serializable {
                     }
                 }
             }
+            rsi.closeRowSetIterator();
         }
         if (!isOverPaymentAllowed) {
             ADFUtils.showErrorMessage("Please apply overpayment to open item. Overpayment is only allowed if customer does not have open items.");
