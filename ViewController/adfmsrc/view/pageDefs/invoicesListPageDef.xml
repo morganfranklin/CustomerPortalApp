@@ -14,12 +14,12 @@
         <tree IterBinding="OpenItems1Iterator" id="OpenItems1" ChangeEventPolicy="none">
             <nodeDefinition DefName="model.OpenItems" Name="OpenItems10">
                 <AttrNames>
+                    <Item Value="selected"/>
                     <Item Value="Item"/>
                     <Item Value="DueDt"/>
                     <Item Value="BalAmt"/>
                     <Item Value="BalCurrency"/>
                     <Item Value="paymentAmount"/>
-                    <Item Value="selected"/>
                 </AttrNames>
             </nodeDefinition>
         </tree>
@@ -121,6 +121,12 @@
                       InstanceName="data.AppModuleDataControl.dataProvider"
                       ReturnName="data.AppModuleDataControl.methodResults.getSalesPerson_AppModuleDataControl_dataProvider_getSalesPerson_result">
             <NamedData NDName="custId" NDValue="#{bindings.CustId.inputValue}" NDType="java.lang.String"/>
+        </methodAction>
+        <methodAction id="applyAgainstOldest" RequiresUpdateModel="true" Action="invokeMethod"
+                      MethodName="applyAgainstOldest" IsViewObjectMethod="false" DataControl="AppModuleDataControl"
+                      InstanceName="data.AppModuleDataControl.dataProvider">
+            <NamedData NDName="custId" NDValue="#{bindings.CustId.inputValue}" NDType="java.lang.String"/>
+            <NamedData NDName="totalAmountTemp" NDType="java.math.BigDecimal"/>
         </methodAction>
     </bindings>
 </pageDefinition>

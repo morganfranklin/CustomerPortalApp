@@ -1,12 +1,21 @@
 package model;
 
+import java.math.BigDecimal;
+
 import model.common.AppModule;
 
 import model.readonly.CollectorROVOImpl;
 import model.readonly.CollectorROVORowImpl;
+import model.readonly.OpenItemsROVOImpl;
+import model.readonly.OpenItemsROVORowImpl;
 import model.readonly.SalesPersonROVOImpl;
 import model.readonly.SalesPersonROVORowImpl;
 
+import oracle.adf.share.logging.ADFLogger;
+
+import oracle.jbo.Key;
+import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
 import oracle.jbo.server.ApplicationModuleImpl;
 import oracle.jbo.server.SequenceImpl;
 import oracle.jbo.server.ViewLinkImpl;
@@ -23,6 +32,8 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
      */
     public AppModuleImpl() {
     }
+    
+    private static ADFLogger _logger = ADFLogger.createADFLogger(AppModuleImpl.class);
 
     /**
      * Container's getter for CustomerView2.
@@ -150,5 +161,67 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
         return (SalesPersonROVOImpl) findViewObject("SalesPersonROVO1");
     }
 
+    /**
+     * Container's getter for OpenItemsROVO1.
+     * @return OpenItemsROVO1
+     */
+    public OpenItemsROVOImpl getOpenItemsROVO() {
+        return (OpenItemsROVOImpl) findViewObject("OpenItemsROVO");
+    }
+    
+    public void applyAgainstOldest(String custId, BigDecimal totalAmountTemp){
+        System.err.println("applyAgainstOldest: "+custId);
+        System.err.println("applyAgainstOldest: "+totalAmountTemp);
+        OpenItemsROVOImpl openItemsROVO = this.getOpenItemsROVO();
+        openItemsROVO.executeEmptyRowSet();
+        openItemsROVO.setbind_CustId(custId);
+        openItemsROVO.executeQuery();
+        CustomerViewRowImpl customerViewRow = (CustomerViewRowImpl)this.getCustomerView2().getCurrentRow();
+        RowSetIterator openItemsIterator = openItemsROVO.createRowSetIterator(null);
+        while(openItemsIterator.hasNext()){
+            OpenItemsROVORowImpl openItemsROVORow = (OpenItemsROVORowImpl)openItemsIterator.next();
+            String item = openItemsROVORow.getItem();
+            System.err.println("applyAgainstOldest: "+item);
+            Key key = new Key(new Object[] { custId.trim(),item.trim() });
+            System.err.println("applyAgainstOldest Key: "+key);
+            Row[] openItems = null;
+            if(null!=key)
+                openItems = customerViewRow.getOpenItems().findByKey(key, 1);
+            if(null!=openItems && openItems.length>0){
+                System.err.println("applyAgainstOldest openItems length: "+openItems.length);
+                OpenItemsRowImpl openItemsRow =(OpenItemsRowImpl)openItems[0];
+                openItemsRow.setselected(Boolean.FALSE);
+                openItemsRow.setpaymentAmount(null);
+                BigDecimal balanceAmount = openItemsRow.getBalAmt();
+                System.out.println(balanceAmount.compareTo(totalAmountTemp));
+                if (totalAmountTemp.compareTo(BigDecimal.valueOf(0)) == 1) {
+                    System.err.println("applyAgainstOldest totalAmountTemp: "+totalAmountTemp);
+                    if (balanceAmount.compareTo(totalAmountTemp) > 0) {
+                        openItemsRow.setpaymentAmount(totalAmountTemp);
+                        totalAmountTemp = totalAmountTemp.subtract(balanceAmount);
+                    } else if (balanceAmount.compareTo(totalAmountTemp) <= 0) {
+                        openItemsRow.setpaymentAmount(balanceAmount);
+                        totalAmountTemp = totalAmountTemp.subtract(balanceAmount);
+                    }
+                } else {
+                    openItemsRow.setpaymentAmount(null);
+                }
+            }
+        }
+        openItemsIterator.closeRowSetIterator();
+        
+        if (totalAmountTemp.compareTo(BigDecimal.valueOf(0)) == 1) {
+            OpenItemsROVORowImpl openItemsROVORow = (OpenItemsROVORowImpl)openItemsROVO.first();
+            String item = openItemsROVORow.getItem();
+            Key key = new Key(new Object[] { custId.trim(),item.trim() });
+            Row[] openItems = null;
+            if(null!=key)
+                openItems = customerViewRow.getOpenItems().findByKey(key, 1);
+            if(null!=openItems && openItems.length>0){
+                OpenItemsRowImpl openItemsRow =(OpenItemsRowImpl)openItems[0];
+                openItemsRow.setpaymentAmount(openItemsRow.getBalAmt().add(totalAmountTemp));
+            }
+        }
+    }
 }
 

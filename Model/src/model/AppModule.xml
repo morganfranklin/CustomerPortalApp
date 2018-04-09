@@ -46,6 +46,9 @@
   <ViewUsage
     Name="SalesPersonROVO1"
     ViewObjectName="model.readonly.SalesPersonROVO"/>
+  <ViewUsage
+    Name="OpenItemsROVO"
+    ViewObjectName="model.readonly.OpenItemsROVO"/>
   <ViewLinkUsage
     Name="Customer2ProfileViewLink"
     ViewLinkObjectName="model.Customer2ProfileViewLink"
@@ -89,6 +92,19 @@
       <Parameter
         Name="custId"
         Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="applyAgainstOldest"
+      MethodName="applyAgainstOldest">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="custId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="totalAmountTemp"
+        Type="java.math.BigDecimal"/>
     </Method>
   </ClientInterface>
 </AppModule>

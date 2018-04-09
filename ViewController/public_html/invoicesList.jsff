@@ -47,7 +47,8 @@
                               fetchSize="#{bindings.OpenItems1.rangeSize}" id="t1" selectionEventDelay="enabled"
                               partialTriggers="::cb1"
                               binding="#{backingBeanScope.NewPaymentProfileBean.invoiceTableBinding}">
-                        <af:column sortable="false" align="center" headerText="Select" id="c1" width="15">
+                        <af:column align="center" headerText="Select" id="c1" width="15"
+                                   sortProperty="#{bindings.OpenItems1.hints.selected.name}">
                             <af:selectBooleanCheckbox value="#{row.selected}" autoSubmit="true"
                                                       valueChangeListener="#{backingBeanScope.NewPaymentProfileBean.selectedInvoiceValueChangeListener}"
                                                       id="sbc1">
@@ -66,14 +67,14 @@
                             <af:outputText value="#{row.Item}" shortDesc="#{bindings.OpenItems1.hints.Item.tooltip}"
                                            id="ot1"/>
                         </af:column>
-                        <af:column sortProperty="#{bindings.OpenItems1.hints.DueDt.name}" sortable="true"
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.DueDt.name}"
                                    headerText="Due Date" id="c2">
                             <af:outputText value="#{row.DueDt}" shortDesc="#{bindings.OpenItems1.hints.DueDt.tooltip}"
                                            id="ot2">
                                 <af:convertDateTime pattern="#{bindings.OpenItems1.hints.DueDt.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalAmt.name}" sortable="true"
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalAmt.name}"
                                    headerText="Invoice Amount " id="c3" width="100">
                             <af:outputText value="#{row.BalAmt}" shortDesc="#{bindings.OpenItems1.hints.BalAmt.tooltip}"
                                            id="ot3">
@@ -81,12 +82,12 @@
                                                   type="number" pattern="#{bindings.OpenItems1.hints.BalAmt.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalCurrency.name}" sortable="true"
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalCurrency.name}"
                                    headerText="Currency" id="c4" width="59">
                             <af:outputText value="#{row.BalCurrency}"
                                            shortDesc="#{bindings.OpenItems1.hints.BalCurrency.tooltip}" id="ot4"/>
                         </af:column>
-                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalAmt.name}" sortable="true"
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.BalAmt.name}"
                                    headerText="Open Amount" id="c5">
                             <af:outputText value="#{row.BalAmt}" shortDesc="#{bindings.OpenItems1.hints.BalAmt.tooltip}"
                                            id="ot5">
@@ -95,7 +96,7 @@
                             </af:outputText>
                         </af:column>
                         <af:column id="c6" headerText="Payment Amount"
-                                   sortProperty="#{bindings.OpenItems1.hints.paymentAmount.name}" sortable="true">
+                                   sortProperty="#{bindings.OpenItems1.hints.paymentAmount.name}">
                             <af:inputText autoSubmit="true" value="#{row.paymentAmount}" id="it2"
                                           valueChangeListener="#{backingBeanScope.NewPaymentProfileBean.paymentAmountValueChangeListener}">
                                 <af:convertNumber groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"

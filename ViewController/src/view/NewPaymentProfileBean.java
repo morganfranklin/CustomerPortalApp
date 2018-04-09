@@ -456,9 +456,15 @@ public class NewPaymentProfileBean implements Serializable {
             BigDecimal totalAmountTemp = new BigDecimal(myPaymentProfileBean.getTotalPaymentAmount().toString());
             DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
             Row row = itr.getCurrentRow();
-            resetTableSort(invoiceTableBinding, OPEN_ITEMS_ITERATOR);
-            clearAllPaymentAmount();
             ViewObject vo = itr.getViewObject();
+            //resetTableSort(invoiceTableBinding, OPEN_ITEMS_ITERATOR);
+            
+            OperationBinding op = ADFUtils.findOperation("applyAgainstOldest");
+            if (null != op) {
+                op.getParamsMap().put("totalAmountTemp", totalAmountTemp);
+                op.execute();
+            }
+            /*clearAllPaymentAmount();
             RowSetIterator rsi = vo.createRowSetIterator(null);
             rsi.reset();
             while (rsi.hasNext()) {
@@ -483,9 +489,10 @@ public class NewPaymentProfileBean implements Serializable {
                 OpenItemsRowImpl r = (OpenItemsRowImpl) rsi.first();
                 r.setpaymentAmount(r.getBalAmt().add(totalAmountTemp));
             }
-            rsi.closeRowSetIterator();
+            rsi.closeRowSetIterator();*/
             if(null!=row)
                 vo.setCurrentRow(row);
+            myPaymentProfileBean.setSelectAll(Boolean.FALSE);
             AdfFacesContext.getCurrentInstance().addPartialTarget(invoiceTableBinding);
         }
     }
@@ -564,10 +571,10 @@ public class NewPaymentProfileBean implements Serializable {
             OpenItemsRowImpl row = (OpenItemsRowImpl) rsi.next();
             row.setselected(Boolean.FALSE);
             row.setpaymentAmount(null);
-            row.setselected(false);
+            //row.setselected(false);
         }
         rsi.closeRowSetIterator();
-        myPaymentProfileBean.setSelectAll(false);
+        myPaymentProfileBean.setSelectAll(Boolean.FALSE);
     }
 
     public void selectedAllTableValueChangeListener(ValueChangeEvent valueChangeEvent) {
@@ -791,6 +798,7 @@ public class NewPaymentProfileBean implements Serializable {
 
     public void cancelActionListener(ActionEvent actionEvent) {
         // Add event code here...
+        myPaymentProfileBean.setTotalPaymentAmount(new BigDecimal(0));
         resetAndRollBackChanges();
     }
 
