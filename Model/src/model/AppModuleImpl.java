@@ -211,7 +211,7 @@ public class AppModuleImpl extends ApplicationModuleImpl implements AppModule {
         openItemsIterator.closeRowSetIterator();
         
         if (totalAmountTemp.compareTo(BigDecimal.valueOf(0)) == 1) {
-            OpenItemsROVORowImpl openItemsROVORow = (OpenItemsROVORowImpl)openItemsROVO.first();
+            OpenItemsROVORowImpl openItemsROVORow = (OpenItemsROVORowImpl)openItemsROVO.last();
             String item = openItemsROVORow.getItem();
             Key key = new Key(new Object[] { custId.trim(),item.trim() });
             Row[] openItems = null;

@@ -68,6 +68,7 @@ public class NewPaymentProfileBean implements Serializable {
     private String cardExpirationYear;
     private String cardCardType;
 
+
     // private String substriptionIdentifier;
     //   private BigDecimal totalPaymentAmount;
 
@@ -837,6 +838,28 @@ public class NewPaymentProfileBean implements Serializable {
             this.myPaymentProfileBean.setNewItemCollector((String)operationBinding2.execute());
         
         return "toConfirmPayment";
+    }
+    
+
+    public boolean isChargeDisable() {
+        BigDecimal totalBalAmount = new BigDecimal(0);
+        DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
+        ViewObject vo = itr.getViewObject();
+        if (vo.getEstimatedRowCount() <= 0)
+            return true;
+        else {
+            RowSetIterator rsi = vo.createRowSetIterator(null);
+            while (rsi.hasNext()) {
+                OpenItemsRowImpl row = (OpenItemsRowImpl) rsi.next();
+                totalBalAmount = totalBalAmount.add(row.getBalAmt());
+            }
+            rsi.closeRowSetIterator();
+            if(totalBalAmount.compareTo(BigDecimal.valueOf(0)) == -1)
+                return true;
+            if(totalBalAmount.compareTo(BigDecimal.valueOf(0)) == 0)
+                return true;
+        }
+        return false;
     }
 
 }

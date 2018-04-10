@@ -158,7 +158,8 @@
                                            id="b5"/>
                                 <af:button text="Charge"
                                            rendered="#{!backingBeanScope.NewPaymentProfileBean.myPaymentProfileBean.showPaymentProfiles}"
-                                           id="b1" action="#{backingBeanScope.NewPaymentProfileBean.chargeAction}"/>
+                                           id="b1" action="#{backingBeanScope.NewPaymentProfileBean.chargeAction}"
+                                           disabled="#{backingBeanScope.NewPaymentProfileBean.chargeDisable}"/>
                                 <af:button text="Cancel" id="b2"
                                            actionListener="#{backingBeanScope.NewPaymentProfileBean.cancelActionListener}"
                                            action="backToProfileView"/>
