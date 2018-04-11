@@ -390,9 +390,10 @@ public class NewPaymentProfileBean implements Serializable {
     private Boolean checkIsOverPaymentAllowed() {
         DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
         ViewObject vo = itr.getViewObject();
-        RowSetIterator rsi = vo.createRowSetIterator(null);
         Boolean isOverPaymentDone = false;
+        Boolean balAmtVsPayAmt = true;
         if (itr.getEstimatedRowCount() > 1) {
+            RowSetIterator rsi = vo.createRowSetIterator(null);
             while (rsi.hasNext()) {
                 OpenItemsRowImpl r = (OpenItemsRowImpl) rsi.next();
                 BigDecimal balanceAmount = (BigDecimal) r.getAttribute("BalAmt");
@@ -408,14 +409,14 @@ public class NewPaymentProfileBean implements Serializable {
                     BigDecimal balanceAmount = (BigDecimal) r.getAttribute("BalAmt");
                     BigDecimal paymentAmount = (BigDecimal) r.getAttribute("paymentAmount");
                     if (paymentAmount == null || paymentAmount.compareTo(balanceAmount) == -1) {
-                        return false;
+                        balAmtVsPayAmt = false;
+                        break;
                     }
                 }
             }
-        } else {
-            return true;
-        }
-        return true;
+            rsi.closeRowSetIterator();
+        } 
+        return balAmtVsPayAmt;
     }
 
     public String payParticularInvoice() {
@@ -456,7 +457,7 @@ public class NewPaymentProfileBean implements Serializable {
         if (myPaymentProfileBean.getTotalPaymentAmount().compareTo(BigDecimal.valueOf(0)) == 1) {
             BigDecimal totalAmountTemp = new BigDecimal(myPaymentProfileBean.getTotalPaymentAmount().toString());
             DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
-            Row row = itr.getCurrentRow();
+            Row currentRow = itr.getCurrentRow();
             ViewObject vo = itr.getViewObject();
             //resetTableSort(invoiceTableBinding, OPEN_ITEMS_ITERATOR);
             
@@ -491,8 +492,12 @@ public class NewPaymentProfileBean implements Serializable {
                 r.setpaymentAmount(r.getBalAmt().add(totalAmountTemp));
             }
             rsi.closeRowSetIterator();*/
-            if(null!=row)
-                vo.setCurrentRow(row);
+            if(null!=currentRow)
+                vo.setCurrentRow(currentRow);
+            Row firstRow = vo.first();
+            //if single row in open items has payment amount then paying the payments is valid
+            if(null!=firstRow && null!=firstRow.getAttribute("paymentAmount"))
+                myPaymentProfileBean.setIndividualAmountIsNull(false);
             myPaymentProfileBean.setSelectAll(Boolean.FALSE);
             AdfFacesContext.getCurrentInstance().addPartialTarget(invoiceTableBinding);
         }
@@ -741,24 +746,23 @@ public class NewPaymentProfileBean implements Serializable {
     }
 
     private Boolean checkIfNoInvoiceSelected() {
-
+        Boolean checkInvoiceSelected = true;
         DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
-        ViewObject vo = itr.getViewObject();
-        RowSetIterator rsi = vo.createRowSetIterator(null);
         if (itr.getEstimatedRowCount() > 0) {
+            ViewObject vo = itr.getViewObject();
+            RowSetIterator rsi = vo.createRowSetIterator(null);
             while (rsi.hasNext()) {
                 OpenItemsRowImpl r = (OpenItemsRowImpl) rsi.next();
                 BigDecimal paymentAmount = (BigDecimal) r.getAttribute("paymentAmount");
                 if (paymentAmount != null &&
                     this.myPaymentProfileBean.getTotalPaymentAmount().compareTo(new BigDecimal(0)) == 1) {
-                    return false;
-
+                    checkInvoiceSelected = false;
+                    break;
                 }
             }
+            rsi.closeRowSetIterator();
         }
-        rsi.closeRowSetIterator();
-        return true;
-
+        return checkInvoiceSelected;
     }
     //
     //    public void sortListener(org.apache.myfaces.trinidad.event.SortEvent sortEvent) {
@@ -854,9 +858,7 @@ public class NewPaymentProfileBean implements Serializable {
                 totalBalAmount = totalBalAmount.add(row.getBalAmt());
             }
             rsi.closeRowSetIterator();
-            if(totalBalAmount.compareTo(BigDecimal.valueOf(0)) == -1)
-                return true;
-            if(totalBalAmount.compareTo(BigDecimal.valueOf(0)) == 0)
+            if(totalBalAmount.compareTo(BigDecimal.valueOf(0)) <= 0)
                 return true;
         }
         return false;
