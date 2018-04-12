@@ -863,5 +863,19 @@ public class NewPaymentProfileBean implements Serializable {
         }
         return false;
     }
+    
+    public boolean isPayButtonDisable() {
+        DCIteratorBinding itr = ADFUtils.findIterator(OPEN_ITEMS_ITERATOR);
+        ViewObject vo = itr.getViewObject();
+        if (vo.getEstimatedRowCount() == 1){
+            OpenItemsRowImpl firstRow = (OpenItemsRowImpl) vo.first();
+            if(null!=firstRow && null!=firstRow.getBalAmt()){
+                BigDecimal balAmount = firstRow.getBalAmt();
+                if(balAmount.compareTo(BigDecimal.valueOf(0))==-1)
+                    return true;
+            }
+        }
+        return false;
+    }
 
 }

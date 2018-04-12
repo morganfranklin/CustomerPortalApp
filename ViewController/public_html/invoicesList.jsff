@@ -107,7 +107,8 @@
                         <af:column rendered="#{!backingBeanScope.NewPaymentProfileBean.myPaymentProfileBean.showPaymentProfiles}"
                                    id="c8" headerText="Pay" width="25">
                             <af:button text="Pay"
-                                       action="#{backingBeanScope.NewPaymentProfileBean.payParticularInvoice}" id="b3"/>
+                                       action="#{backingBeanScope.NewPaymentProfileBean.payParticularInvoice}" id="b3"
+                                       disabled="#{backingBeanScope.NewPaymentProfileBean.payButtonDisable}"/>
                         </af:column>
                     </af:table>
                 </af:gridCell>
