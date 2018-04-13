@@ -62,7 +62,7 @@
                                 </af:selectBooleanCheckbox>
                             </f:facet>
                         </af:column>
-                        <af:column sortProperty="#{bindings.OpenItems1.hints.Item.name}" sortable="true"
+                        <af:column sortProperty="#{bindings.OpenItems1.hints.Item.name}"
                                    headerText="Invoice" id="c7">
                             <af:outputText value="#{row.Item}" shortDesc="#{bindings.OpenItems1.hints.Item.tooltip}"
                                            id="ot1"/>
