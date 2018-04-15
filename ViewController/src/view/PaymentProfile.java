@@ -95,7 +95,7 @@ public class PaymentProfile implements Serializable {
             //For new item
             if(this.getNoInvoicesSelected()){
                 
-                pendingItemArray.put(this.getPsPendingItemSeq(), "ON_ACCOUNT" + ":" + this.totalPaymentAmount+":AR-12500"+":"+this.getNewItemSalesPerson()+":"+this.getNewItemCollector());
+                pendingItemArray.put(this.getPsPendingItemSeq(), "ON_ACCOUNT" + ":" + this.totalPaymentAmount+":PY-12502"+":"+this.getNewItemSalesPerson()+":"+this.getNewItemCollector());
                 customerId = (String)ADFUtils.evaluateEL("#{bindings.CustId.inputValue}");
             }
         
