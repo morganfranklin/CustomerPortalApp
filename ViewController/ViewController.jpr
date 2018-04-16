@@ -196,7 +196,7 @@
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
       <value n="j2eeWebAppName" v="ViewController"/>
-      <value n="j2eeWebContextRoot" v="GVCA_14"/>
+      <value n="j2eeWebContextRoot" v="GVCA_15"/>
    </hash>
    <hash n="oracle.jdeveloper.runner.RunConfigurations">
       <hash n="runConfigurationDefinitions">
