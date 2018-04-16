@@ -8,7 +8,7 @@
                     <af:outputText value="Customer Billing and Self-Service Center" id="ot1"/>
                 </f:facet>
                 <f:facet name="status">
-                    <af:menuBar id="mb1">
+                    <af:menuBar id="mb1" rendered="false">
                         <af:menu text="Tomasz Zarzycki" id="m2">
                             <af:commandMenuItem text="Sign Out" id="cmi1"/>
                         </af:menu>
