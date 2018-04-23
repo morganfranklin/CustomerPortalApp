@@ -5484,7 +5484,7 @@ public class GenericDataHandler implements Runnable
            localStatement = localStatement + "' ',";
            localStatement = localStatement + "0,";
            localStatement = localStatement + "0,";
-           localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
+           localStatement = localStatement + "TO_TIMESTAMP(TO_CHAR(SYSTIMESTAMP,'DD-MON-RR HH:MI:SS.FF AM')),";
            localStatement = localStatement + "'ADMSANB',";
            localStatement = localStatement + "TRUNC(SYSDATE, 'DDD'),";
            localStatement = localStatement + "'ADMSANB',";
