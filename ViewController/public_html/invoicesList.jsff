@@ -49,7 +49,7 @@
                               binding="#{backingBeanScope.NewPaymentProfileBean.invoiceTableBinding}">
                         <af:column align="center" headerText="Select" id="c1" width="15"
                                    sortProperty="#{bindings.OpenItems1.hints.selected.name}">
-                            <af:selectBooleanCheckbox value="#{row.selected}" autoSubmit="true"
+                            <af:selectBooleanCheckbox value="#{row.bindings.selected.inputValue}" autoSubmit="true"
                                                       valueChangeListener="#{backingBeanScope.NewPaymentProfileBean.selectedInvoiceValueChangeListener}"
                                                       id="sbc1">
                                 <?audit suppress oracle.adf.faces.compnotlabelled?>
@@ -97,7 +97,7 @@
                         </af:column>
                         <af:column id="c6" headerText="Payment Amount"
                                    sortProperty="#{bindings.OpenItems1.hints.paymentAmount.name}">
-                            <af:inputText autoSubmit="true" value="#{row.paymentAmount}" id="it2"
+                            <af:inputText autoSubmit="true" value="#{row.bindings.paymentAmount.inputValue}" id="it2"
                                           valueChangeListener="#{backingBeanScope.NewPaymentProfileBean.paymentAmountValueChangeListener}">
                                 <af:convertNumber groupingUsed="true" maxFractionDigits="2" minFractionDigits="2"
                                                   type="number"

@@ -89,7 +89,8 @@
     PrecisionRule="true"
     EntityAttrName="selected"
     EntityUsage="OpenItemsEO"
-    AliasName="$none$"/>
+    AliasName="$none$"
+    DefaultValue="FALSE"/>
   <ViewAttribute
     Name="SalesPerson"
     IsNotNull="true"
