@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="securePortalFlow">
+    <?audit suppress oracle.adfdt.controller.adfc.source.audit.TaskFlowReturnActivitiesNotDefined?>
+    <default-activity>authentication</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__12">
+      <name>token</name>
+      <value>#{pageFlowScope.token}</value>
+      <class>java.lang.String</class>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__21">
+      <managed-bean-name>MainDynamicRegionBean</managed-bean-name>
+      <managed-bean-class>view.MainDynamicRegionBean</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <managed-property id="__22">
+        <property-name>myPageFlowBean</property-name>
+        <property-class>view.GvcMain</property-class>
+        <value>#{pageFlowScope.GvcMainBean}</value>
+      </managed-property>
+    </managed-bean>
+    <managed-bean id="__23">
+      <managed-bean-name>GvcMainBean</managed-bean-name>
+      <managed-bean-class>view.GvcMain</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__24">
+      <managed-bean-name>PeopleSoftVerifier</managed-bean-name>
+      <managed-bean-class>view.PeopleSoftVerifier</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <view id="GvaaHome1">
+      <page>/GvaaHome1.jsf</page>
+    </view>
+    <method-call id="authentication">
+      <method>#{PeopleSoftVerifier.verifyToken}</method>
+      <outcome>
+        <fixed-outcome>checked</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__27">
+      <from-activity-id>authentication</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome>checked</from-outcome>
+        <to-activity-id>GvaaHome1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
+  </task-flow-definition>
+</adfc-config>
